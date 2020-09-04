@@ -1,4 +1,4 @@
-﻿Shader "My/SliceCross"
+﻿Shader "My/BladeMode/SliceCross"
 {
 	Properties
 	{

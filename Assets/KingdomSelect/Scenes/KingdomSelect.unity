@@ -171,79 +171,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &106327022
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1548479602108504, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_Name
-      value: KingdomPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4471139610315870, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23973942399412376, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f30c72b297f3b8a429d20ee73f99c6d9, type: 2}
-    - target: {fileID: 122688197879533948, guid: a11acba64b4dc93499beccb689f03776, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a11acba64b4dc93499beccb689f03776, type: 3}
 --- !u!1 &201232287
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 300537757}
+  - component: {fileID: 300537758}
   m_Layer: 0
   m_Name: KingdomSelect
   m_TagString: Untagged
@@ -351,6 +279,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300537758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300537756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fe64da77ba59344b925078acfa89f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kingdoms: []
+  kingdomPointPrefab: {fileID: 0}
+  kingdomButtonPrefab: {fileID: 0}
+  modelTransform: {fileID: 0}
+  kingdomButtonsContainer: {fileID: 0}
+  lookDuration: 0
+  lookEase: 0
+  visualOffset: {x: 0, y: 0}
 --- !u!1 &352830840
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +336,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 38.19995}
-  m_SizeDelta: {x: 0, y: 16.4}
+  m_SizeDelta: {x: 0, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352830842
 MonoBehaviour:
@@ -749,6 +697,7 @@ GameObject:
   - component: {fileID: 1217570799}
   - component: {fileID: 1217570801}
   - component: {fileID: 1217570800}
+  - component: {fileID: 1217570802}
   m_Layer: 5
   m_Name: Circle_One
   m_TagString: Untagged
@@ -813,6 +762,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217570798}
   m_CullTransparentMesh: 0
+--- !u!114 &1217570802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217570798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3ae49eb2cdce04d955a11091fafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 1217570799}
+  duration: 1
+  delay: 0
 --- !u!1001 &1239389826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -894,6 +858,7 @@ GameObject:
   - component: {fileID: 1271850175}
   - component: {fileID: 1271850177}
   - component: {fileID: 1271850176}
+  - component: {fileID: 1271850178}
   m_Layer: 5
   m_Name: Circle_Two
   m_TagString: Untagged
@@ -958,6 +923,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271850174}
   m_CullTransparentMesh: 0
+--- !u!114 &1271850178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271850174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3ae49eb2cdce04d955a11091fafc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 1271850175}
+  duration: 1
+  delay: 0.5
 --- !u!1 &1436179020
 GameObject:
   m_ObjectHideFlags: 0

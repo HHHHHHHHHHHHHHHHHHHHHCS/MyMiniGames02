@@ -1,4 +1,4 @@
-﻿Shader "My/SlicePlane"
+﻿Shader "My/BladeMode/SlicePlane"
 {
 	Properties
 	{
