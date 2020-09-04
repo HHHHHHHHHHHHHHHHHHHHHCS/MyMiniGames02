@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FollowObject : MonoBehaviour
+namespace BladeMode
 {
-    public Transform target;
-    
-    private void Update()
+    public class FollowObject : MonoBehaviour
     {
-        transform.position = target.position;
+        public Transform target;
+    
+        private void Update()
+        {
+            transform.position = target.position;
+        }
     }
 }

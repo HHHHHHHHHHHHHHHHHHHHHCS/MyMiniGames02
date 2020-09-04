@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SlicePlane"
+﻿Shader "My/SlicePlane"
 {
 	Properties
 	{
