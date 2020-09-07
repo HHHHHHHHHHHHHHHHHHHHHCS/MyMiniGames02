@@ -291,14 +291,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fe64da77ba59344b925078acfa89f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kingdoms: []
-  kingdomPointPrefab: {fileID: 0}
-  kingdomButtonPrefab: {fileID: 0}
-  modelTransform: {fileID: 0}
-  kingdomButtonsContainer: {fileID: 0}
-  lookDuration: 0
-  lookEase: 0
-  visualOffset: {x: 0, y: 0}
+  kingdoms:
+  - name: World 1
+    x: 18
+    y: 24.4
+    visualPoint: {fileID: 0}
+  - name: World 2
+    x: 52
+    y: -28
+    visualPoint: {fileID: 0}
+  - name: World 3
+    x: 115
+    y: 2.1
+    visualPoint: {fileID: 0}
+  - name: World 4
+    x: 140
+    y: -43.4
+    visualPoint: {fileID: 0}
+  - name: World 5
+    x: -133
+    y: 6.1
+    visualPoint: {fileID: 0}
+  kingdomPointPrefab: {fileID: 1548479602108504, guid: a11acba64b4dc93499beccb689f03776, type: 3}
+  kingdomButtonPrefab: {fileID: 1861309625335837411, guid: e708ed491f3c10240a46f4ed84b778c7, type: 3}
+  modelTransform: {fileID: 1239389827}
+  kingdomButtonsContainer: {fileID: 352830841}
+  lookDuration: 1
+  lookEase: 12
+  visualOffset: {x: -16.4, y: 22.99}
 --- !u!1 &352830840
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,12 +385,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 15
-    m_Right: 15
+    m_Left: 30
+    m_Right: 30
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 15
+  m_Spacing: 30
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -457,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432268325}
   - component: {fileID: 432268326}
+  - component: {fileID: 432268327}
   m_Layer: 5
   m_Name: Indicator
   m_TagString: Untagged
@@ -493,6 +514,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432268324}
   m_CullTransparentMesh: 0
+--- !u!114 &432268327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432268324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f550c68ab9a81004da98228260f7bd46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &642228385
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,5 +77,46 @@ namespace KingdomSelect
 
 			FindObjectOfType<FollowTarget>().target = k.visualPoint;
 		}
+
+		private void OnDrawGizmos()
+		{
+#if UNITY_EDITOR
+			Gizmos.color = Color.red;
+
+			//only draw if there is at least one stage
+			if (kingdoms.Count > 0)
+			{
+				for (int i = 0; i < kingdoms.Count; i++)
+				{
+					//creat two empty objects
+					GameObject point = new GameObject();
+					GameObject parent = new GameObject();
+
+					point.hideFlags = HideFlags.HideInInspector;
+					parent.hideFlags = HideFlags.HideInInspector;
+
+					//move the point object to the front of the world sphere
+					point.transform.position += -new Vector3(0, 0, .5f);
+					//parent the point to the "parent" object in the center
+					point.transform.parent = parent.transform;
+					//set the visual offset
+					parent.transform.eulerAngles = new Vector3(visualOffset.y, -visualOffset.x, 0);
+
+					if (!Application.isPlaying)
+					{
+						Gizmos.DrawWireSphere(point.transform.position, 0.02f);
+					}
+
+					//spint the parent object based on the stage coordinates
+					parent.transform.eulerAngles += new Vector3(kingdoms[i].y, -kingdoms[i].x, 0);
+					//draw a gizmo sphere // handle label in the point object's position
+					Gizmos.DrawSphere(point.transform.position, 0.07f);
+					//destroy all
+					DestroyImmediate(point);
+					DestroyImmediate(parent);
+				}
+			}
+#endif
+		}
 	}
 }
