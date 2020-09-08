@@ -60,7 +60,7 @@ namespace SmashCSS
 			trans.sizeDelta *= character.zoom;
 		}
 
-		private void ShowCharacterInSlot(int player, Character character)
+		public void ShowCharacterInSlot(int player, Character character)
 		{
 			bool nullChar = (character == null);
 
