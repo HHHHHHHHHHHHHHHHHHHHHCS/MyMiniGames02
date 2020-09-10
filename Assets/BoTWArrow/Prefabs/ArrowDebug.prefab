@@ -9888,6 +9888,7 @@ GameObject:
   - component: {fileID: 633814222346289911}
   - component: {fileID: 2875181671272620440}
   - component: {fileID: 7017621636291775837}
+  - component: {fileID: 8809140531254235925}
   m_Layer: 0
   m_Name: ArrowDebug
   m_TagString: Untagged
@@ -9961,7 +9962,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 35dd10c20d9d9a045afd8e08f51c55e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10039,3 +10040,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8809140531254235925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048783632731592835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2c150bc99989d4e9baedebac858e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticle: {fileID: 4577065151695881440, guid: 271c34c35bf740e41b77233961233507, type: 3}
