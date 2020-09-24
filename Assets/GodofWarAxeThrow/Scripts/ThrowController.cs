@@ -50,6 +50,7 @@ namespace GodofWarAxeThrow
 		private void Start()
 		{
 			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Confined;
 
 			animator = GetComponent<Animator>();
 			input = GetComponent<MovementInput>();
@@ -73,19 +74,29 @@ namespace GodofWarAxeThrow
 					transform.eulerAngles.y, transform.eulerAngles.z);
 			}
 
-			animator.SetBool("pulling", pulling);
-			walking = input.speed > 0;
-			animator.SetBool("walking", walking);
 
-			if (Input.GetMouseButtonDown(1) && hasWeapon)
+
+			if (Input.GetMouseButton(1) && hasWeapon)
 			{
 				Aim(true, true, 0);
 			}
-
+			
 			if (Input.GetMouseButtonUp(1) && hasWeapon)
 			{
 				Aim(false, true, 0);
 			}
+
+			if (hasWeapon)
+			{
+				animator.SetBool("pulling", pulling);
+			}
+
+			if (!aiming)
+			{
+				walking = input.speed > 0;
+				animator.SetBool("walking", walking);
+			}
+			
 
 			if (hasWeapon)
 			{

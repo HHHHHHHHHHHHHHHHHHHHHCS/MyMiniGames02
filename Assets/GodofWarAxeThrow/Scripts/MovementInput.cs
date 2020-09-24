@@ -84,7 +84,7 @@ namespace GodofWarAxeThrow
 
 			desiredMoveDirection = forward * InputZ + right * InputX;
 
-			if (GetComponent<ThrowController>().aiming == null)
+			if (GetComponent<ThrowController>().aiming)
 			{
 				return;
 			}
