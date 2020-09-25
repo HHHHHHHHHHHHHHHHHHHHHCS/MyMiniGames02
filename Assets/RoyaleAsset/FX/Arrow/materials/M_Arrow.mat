@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Arrow
   m_Shader: {fileID: 4800000, guid: 8516d7a69675844a7a0b7095af7c46af, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _COLOROVERLAY_ON _RECEIVE_SHADOWS_OFF _SPECULAR_COLOR
+  m_ShaderKeywords: _ALPHATEST_ON _COLOROVERLAY_ON _SPECULAR_COLOR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -133,7 +133,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.19998634, g: 0.19998634, b: 0.19998634, a: 0}
+    - _SpecColor: {r: 0.19998631, g: 0.19998631, b: 0.19998631, a: 0}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
 --- !u!114 &6588146281215093332
