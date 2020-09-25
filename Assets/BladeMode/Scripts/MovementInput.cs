@@ -5,20 +5,20 @@ namespace BladeMode
 	[RequireComponent(typeof(CharacterController))]
 	public class MovementInput : MonoBehaviour
 	{
-		public float Velocity;
-		[Space] public float InputX;
-		public float InputZ;
+		public float velocity;
+		[Space] public float inputX;
+		public float inputZ;
 		public Vector3 desiredMoveDirection;
 		public bool blockRotationPlayer;
 		public float desiredRotationSpeed = 0.1f;
-		public float Speed;
+		public float speed;
 		public float allowPlayerRotation = 0.1f;
 		public bool isGrounded;
 
 		[Header("Animation Smoothing")] [Range(0, 1f)]
-		public float HorizontalAnimSmoothTime = 0.2f;
-
-		[Range(0, 1f)] public float VerticalAnimTime = 0.2f;
+		public float horizontalAnimSmoothTime = 0.2f;
+		[Range(0, 1f)] public float verticalAnimTime = 0.2f;
+		
 		[Range(0, 1f)] public float StartAnimTime = 0.3f;
 		[Range(0, 1f)] public float StopAnimTime = 0.15f;
 
@@ -56,22 +56,22 @@ namespace BladeMode
 
 		private void InputMagnitude()
 		{
-			InputX = Input.GetAxis("Horizontal");
-			InputZ = Input.GetAxis("Vertical");
+			inputX = Input.GetAxis("Horizontal");
+			inputZ = Input.GetAxis("Vertical");
 
 			//anim.SetFloat ("InputZ", InputZ, VerticalAnimTime, Time.deltaTime * 2f);
 			//anim.SetFloat ("InputX", InputX, HorizontalAnimSmoothTime, Time.deltaTime * 2f);
 
-			Speed = new Vector2(InputX, InputZ).sqrMagnitude;
+			speed = new Vector2(inputX, inputZ).sqrMagnitude;
 
-			if (Speed > allowPlayerRotation)
+			if (speed > allowPlayerRotation)
 			{
-				anim.SetFloat("Blend", Speed, StartAnimTime, Time.deltaTime);
+				anim.SetFloat("Blend", speed, StartAnimTime, Time.deltaTime);
 				PlayerMoveAndRotation();
 			}
-			else if (Speed < allowPlayerRotation)
+			else if (speed < allowPlayerRotation)
 			{
-				anim.SetFloat("Blend", Speed, StopAnimTime, Time.deltaTime);
+				anim.SetFloat("Blend", speed, StopAnimTime, Time.deltaTime);
 			}
 		}
 
@@ -87,13 +87,13 @@ namespace BladeMode
 			forward.Normalize();
 			right.Normalize();
 
-			desiredMoveDirection = forward * InputZ + right * InputX;
+			desiredMoveDirection = forward * inputZ + right * inputX;
 
 			if (blockRotationPlayer == false)
 			{
 				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection),
 					desiredRotationSpeed);
-				controller.Move(desiredMoveDirection * Time.deltaTime * Velocity);
+				controller.Move(desiredMoveDirection * Time.deltaTime * velocity);
 			}
 		}
 
