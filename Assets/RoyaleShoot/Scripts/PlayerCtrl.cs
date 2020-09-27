@@ -27,7 +27,7 @@ namespace RoyaleShoot
 		private float inputZ;
 		private float speed;
 		private bool isMoving;
-		private bool isZoom;
+		private bool isZooming;
 
 		private CinemachineComposer[] composers;
 		private float normalFOV;
@@ -59,19 +59,31 @@ namespace RoyaleShoot
 
 			speed = new Vector2(inputX, inputZ).sqrMagnitude;
 			isMoving = speed > allowPlayerRotation;
-			isZoom = Input.GetMouseButton(1);
+			isZooming = Input.GetMouseButton(1);
 
 			if (isMoving)
 			{
 				anim.SetBool(IsMovingID, true);
-				PlayerMoveAndRotation(isZoom ? 0.2f : 1f);
+				PlayerMoveAndRotation(isZooming ? 0.2f : 1f);
 			}
 			else
 			{
 				anim.SetBool(IsMovingID, false);
 			}
 
-			Zoom(isZoom);
+			bool rightDown = Input.GetMouseButtonDown(1);
+			bool rightUp = Input.GetMouseButtonUp(1);
+			if (isZooming)
+			{
+				transform.rotation = Quaternion.Slerp(transform.rotation,
+					Quaternion.LookRotation(cam.transform.forward),
+					desiredRotationSpeed);
+			}
+
+			if (rightDown || rightUp)
+			{
+				Zoom(rightDown);
+			}
 		}
 
 		private void PlayerMoveAndRotation(float scale)
@@ -101,6 +113,7 @@ namespace RoyaleShoot
 			float from = state ? 0 : 1;
 			float to = state ? 1 : 0;
 
+
 			DOVirtual.Float(cvCam.m_Lens.FieldOfView, fov, .1f, SetFieldOfView);
 			DOVirtual.Float(from, to, .2f, SetCameraOffset).SetUpdate(true);
 		}
@@ -112,13 +125,12 @@ namespace RoyaleShoot
 
 		private void SetCameraOffset(float time)
 		{
-			Vector3 offset = isZoom ? zoomOffset : normalOffset;
+			Vector3 offset = isZooming ? zoomOffset : normalOffset;
 			var xy = Vector2.Lerp(composers[0].m_TrackedObjectOffset, offset, time);
 			foreach (var c in composers)
 			{
 				c.m_TrackedObjectOffset.Set(xy.x, xy.y, c.m_TrackedObjectOffset.z);
 			}
 		}
-
 	}
 }
