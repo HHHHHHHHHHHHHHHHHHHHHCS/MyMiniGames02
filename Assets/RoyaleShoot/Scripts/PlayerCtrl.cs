@@ -12,6 +12,7 @@ namespace RoyaleShoot
 		private static readonly int IsAttackID = Animator.StringToHash("IsAttack");
 
 		public GameObject arrowPrefab;
+		public CanvasGroup canvasGroup;
 
 		public float velocity = 6f;
 
@@ -152,7 +153,7 @@ namespace RoyaleShoot
 			float fov = isZooming ? zoomFOV : normalFOV;
 
 			cvCam.m_Lens.FieldOfView = Mathf.Lerp(cvCam.m_Lens.FieldOfView, fov, time);
-
+			canvasGroup.alpha = time;
 			foreach (var c in composers)
 			{
 				c.m_TrackedObjectOffset.Set(xy.x, xy.y, c.m_TrackedObjectOffset.z);
