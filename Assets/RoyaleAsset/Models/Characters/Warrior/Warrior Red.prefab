@@ -879,6 +879,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -890,6 +892,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -983,7 +986,6 @@ GameObject:
   - component: {fileID: 6826973555475864791}
   - component: {fileID: 7657649297414108623}
   - component: {fileID: 7321173093633038108}
-  - component: {fileID: 1479946322843236336}
   - component: {fileID: 1281781896090838426}
   m_Layer: 0
   m_Name: Warrior Red
@@ -1049,35 +1051,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!114 &1479946322843236336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701704621631426976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e608a1f1ca8e9408c80cecad0677521f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pType: 0
-  faction: 0
-  targetType: 0
-  dieAudioClip: {fileID: 0}
-  state: 0
-  attackType: 0
-  target: {fileID: 0}
-  healthBar: {fileID: 0}
-  hitPoints: 0
-  attackRange: 0
-  attackRatio: 0
-  lastBlowTime: -1000
-  damage: 0
-  attackAudioClip: {fileID: 0}
-  timeToActNext: 0
-  projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
 --- !u!82 &1281781896090838426
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1087,8 +1060,7 @@ AudioSource:
   m_GameObject: {fileID: 5701704621631426976}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2952065167930763301, guid: b2f83e2012e254719a32b3d8312da356,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1220,6 +1192,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1231,6 +1205,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
