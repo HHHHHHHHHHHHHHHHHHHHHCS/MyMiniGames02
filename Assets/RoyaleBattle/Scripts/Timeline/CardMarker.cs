@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-namespace RoyaleBattle.Scripts.Timeline
+namespace RoyaleBattle
 {
 	[Serializable, DisplayName("Card Marker")]
 	public class CardMarker : Marker, INotification

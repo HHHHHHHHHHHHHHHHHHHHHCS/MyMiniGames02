@@ -2,7 +2,7 @@
 
 namespace SmashCSS
 {
-	[CreateAssetMenu(fileName = "New Character", menuName = "Character")]
+	[CreateAssetMenu(fileName = "New Character", menuName = "SmashCSS/Character")]
 	[System.Serializable]
 	public class Character : ScriptableObject
 	{

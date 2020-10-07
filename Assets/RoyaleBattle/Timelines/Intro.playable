@@ -313,7 +313,8 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: 3176335056562668186}
 --- !u!114 &-2871000193347758436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,6 +557,22 @@ MonoBehaviour:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
+--- !u!114 &3176335056562668186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84ec717fa7c14c4b949685bc877dffd, type: 3}
+  m_Name: Card Marker
+  m_EditorClassIdentifier: 
+  m_Time: 6.06666666666667
+  card: {fileID: 0}
+  position: {x: 0, y: 0, z: 7}
+  faction: 1
 --- !u!114 &6026338132388686925
 MonoBehaviour:
   m_ObjectHideFlags: 1
