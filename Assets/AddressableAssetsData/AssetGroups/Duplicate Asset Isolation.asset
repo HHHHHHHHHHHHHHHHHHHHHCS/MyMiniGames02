@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4c5ac492de2a1a84d84d674e06366146
+  m_SerializeEntries:
+  - m_GUID: 08dcd917cbcd8df4c852987b649b643c
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Idle.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 100116, guid: 08dcd917cbcd8df4c852987b649b643c, type: 3}
+    m_TargetAsset: {fileID: 100116, guid: 08dcd917cbcd8df4c852987b649b643c, type: 3}
+  - m_GUID: 193f10ab2cd304a33bda2d36ec7794ed
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Attack.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 7400000, guid: 193f10ab2cd304a33bda2d36ec7794ed, type: 2}
+    m_TargetAsset: {fileID: 7400000, guid: 193f10ab2cd304a33bda2d36ec7794ed, type: 2}
+  - m_GUID: 2b6a69fd13305b34b83b9f32d76b26b9
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_N.tif
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 2b6a69fd13305b34b83b9f32d76b26b9, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 2b6a69fd13305b34b83b9f32d76b26b9, type: 3}
+  - m_GUID: 2bf4029e327b74068936cf64d3fdbc9d
+    m_Address: Assets/RoyaleAsset/Textures/UI/CardArt/Archers.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 2bf4029e327b74068936cf64d3fdbc9d, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 2bf4029e327b74068936cf64d3fdbc9d, type: 3}
+  - m_GUID: 3097e307c4bd26d429d44f28d4682f9a
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_die.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 100116, guid: 3097e307c4bd26d429d44f28d4682f9a, type: 3}
+    m_TargetAsset: {fileID: 100116, guid: 3097e307c4bd26d429d44f28d4682f9a, type: 3}
+  - m_GUID: 36e93c435d1648a4c86d516057a9cbe2
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Warrior Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 5701704621631426976, guid: 36e93c435d1648a4c86d516057a9cbe2, type: 3}
+    m_TargetAsset: {fileID: 5701704621631426976, guid: 36e93c435d1648a4c86d516057a9cbe2, type: 3}
+  - m_GUID: 37594f01984414613b3ba897e300f3e9
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Controller/Warrior.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 9100000, guid: 37594f01984414613b3ba897e300f3e9, type: 2}
+    m_TargetAsset: {fileID: 9100000, guid: 37594f01984414613b3ba897e300f3e9, type: 2}
+  - m_GUID: 3d7094a1663ab0a44ab8e11c1defd922
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Warrior Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2803772846224482086, guid: 3d7094a1663ab0a44ab8e11c1defd922, type: 3}
+    m_TargetAsset: {fileID: 2803772846224482086, guid: 3d7094a1663ab0a44ab8e11c1defd922, type: 3}
+  - m_GUID: 67a2fcb5836f03849a84ff6974b6cb0f
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_M.tif
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 67a2fcb5836f03849a84ff6974b6cb0f, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 67a2fcb5836f03849a84ff6974b6cb0f, type: 3}
+  - m_GUID: 7daf17b184d342145bfbd9d311c8bf48
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_D.tif
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 7daf17b184d342145bfbd9d311c8bf48, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 7daf17b184d342145bfbd9d311c8bf48, type: 3}
+  - m_GUID: 933532a4fcc9baf4fa0491de14d08ed7
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+    m_TargetAsset: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  - m_GUID: 9e52c160328d68b4799c73e4e5cd0ed7
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Model/Warrior_bindpose.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 100120, guid: 9e52c160328d68b4799c73e4e5cd0ed7, type: 3}
+    m_TargetAsset: {fileID: 100120, guid: 9e52c160328d68b4799c73e4e5cd0ed7, type: 3}
+  - m_GUID: b04fb6834ee365340bd3157fc85c93ca
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior2_D.tif
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: b04fb6834ee365340bd3157fc85c93ca, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: b04fb6834ee365340bd3157fc85c93ca, type: 3}
+  - m_GUID: b3c8ae782a2d91949b48190d513f4986
+    m_Address: Assets/RoyaleBattle/GameData/3 Placeables/Warrior.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: b3c8ae782a2d91949b48190d513f4986, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: b3c8ae782a2d91949b48190d513f4986, type: 2}
+  - m_GUID: cfdb5693d94394e0c966e8791e82b981
+    m_Address: Assets/RoyaleAsset/Textures/UI/CardArt/Viking.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: cfdb5693d94394e0c966e8791e82b981, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: cfdb5693d94394e0c966e8791e82b981, type: 3}
+  - m_GUID: d95ff3ad3e3bb7f4fada1c33e41531f3
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Run.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 100116, guid: d95ff3ad3e3bb7f4fada1c33e41531f3, type: 3}
+    m_TargetAsset: {fileID: 100116, guid: d95ff3ad3e3bb7f4fada1c33e41531f3, type: 3}
+  - m_GUID: e6e9a19c3678ded42a3bc431ebef7dbd
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/Utils/FallbackError.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+    m_TargetAsset: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+  - m_GUID: ede081b021db11e46bbb3bbf5a5b9b24
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Materials/MAT_Warrior_Blue.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2100000, guid: ede081b021db11e46bbb3bbf5a5b9b24, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: ede081b021db11e46bbb3bbf5a5b9b24, type: 2}
+  - m_GUID: f5c5dbbff2d9ef142ac545f2c20f7077
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Materials/MAT_Warrior_Red.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2100000, guid: f5c5dbbff2d9ef142ac545f2c20f7077, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: f5c5dbbff2d9ef142ac545f2c20f7077, type: 2}
+  - m_GUID: ff364b9c739cf4348b853c1de981d7c9
+    m_Address: Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Gethit.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 100116, guid: ff364b9c739cf4348b853c1de981d7c9, type: 3}
+    m_TargetAsset: {fileID: 100116, guid: ff364b9c739cf4348b853c1de981d7c9, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6abb7970b6a1d7f48b3ff57918435af7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8c854a2d3c47e2e4ab8f63395c85943d, type: 2}
+    - {fileID: 11400000, guid: 53d93feab340caa49ab28b5397aba1bd, type: 2}

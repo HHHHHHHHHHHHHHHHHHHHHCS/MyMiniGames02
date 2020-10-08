@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote
+  m_EditorClassIdentifier: 
+  m_GroupName: Remote
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 26ab6dd00cb624449b271070260ecfd1
+  m_SerializeEntries:
+  - m_GUID: 0a6682881d9737d498099ab5e8bce8d4
+    m_Address: RockWarrior
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 43a5f7b58ea051a43be117f3cf19531f
+    m_Address: WarriorInnocuous
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b351b29812016ea4798783188ad12532
+    m_Address: TwoWarriors
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Base
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c0c6de4610181f1458e60168b9291c6f
+    m_Address: Rock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6abb7970b6a1d7f48b3ff57918435af7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3432b9a5e6964bc4e92cd852fd441fa0, type: 2}
+    - {fileID: 11400000, guid: f457c5095c2dc634b9d5136e79589418, type: 2}

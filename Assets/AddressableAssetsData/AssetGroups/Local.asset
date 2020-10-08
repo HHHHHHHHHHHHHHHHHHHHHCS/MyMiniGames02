@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Local
+  m_EditorClassIdentifier: 
+  m_GroupName: Local
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bebb4396401205240b968d94b4b5a6ab
+  m_SerializeEntries:
+  - m_GUID: 52bc4e8f5cb856a4bbaca020562621dd
+    m_Address: Archers
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Base
+    - AI
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8855e0857780bc54ebda9ae0bfd8b278
+    m_Address: Mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Base
+    - AI
+    m_MainAsset: {fileID: 11400000, guid: 8855e0857780bc54ebda9ae0bfd8b278, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 8855e0857780bc54ebda9ae0bfd8b278, type: 2}
+  - m_GUID: ae144718a0cda374e9f37effa0bec3df
+    m_Address: Warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Base
+    m_MainAsset: {fileID: 11400000, guid: ae144718a0cda374e9f37effa0bec3df, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: ae144718a0cda374e9f37effa0bec3df, type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6abb7970b6a1d7f48b3ff57918435af7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b460db3e2c717a54fa59457f4f3ae1fe, type: 2}
+    - {fileID: 11400000, guid: 35815e15f808c6b478ea5356e7f79d26, type: 2}

@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4f4bb6406ecefe43bb0d667a39b0132, type: 3}
-  m_Name: Archer
+  m_Name: SmallRock
   m_EditorClassIdentifier: 
-  pType: 0
-  associatedPrefab: {fileID: 5537164977549460556, guid: f7e6e31c5324d874db515c8ca4922190, type: 3}
-  alternatePrefab: {fileID: 4506006686708116928, guid: 93ddf5fff26bcb642a6f1f94462963b2, type: 3}
+  pType: 1
+  associatedPrefab: {fileID: 3299912398919571464, guid: c69b8651000d54beba2977ba82be78e9, type: 3}
+  alternatePrefab: {fileID: 0}
   attackType: 0
-  targetType: 1
-  attackRatio: 1.5
-  damagePerAttack: 1
-  attackRange: 6
-  hitPoints: 8
+  targetType: 2
+  attackRatio: 0
+  damagePerAttack: 0
+  attackRange: 0
+  hitPoints: 0
   attackClip: {fileID: 0}
   dieClip: {fileID: 0}
-  speed: 4
+  speed: 0
   lifeTime: 5
-  damagePerSecond: 1
+  damagePerSecond: 0

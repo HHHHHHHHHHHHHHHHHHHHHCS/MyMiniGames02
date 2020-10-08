@@ -1,0 +1,2346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc77607c2a62ef48b8f7dec55cc6d91, type: 3}
+  m_Name: AnalyzeRuleData
+  m_EditorClassIdentifier: 
+  m_RuleToResults:
+  - RuleName: Check Duplicate Bundle Dependencies
+    Results:
+    - m_ResultName: No issues found
+      m_Severity: 0
+  - RuleName: Check Resources to Addressable Duplicate Dependencies
+    Results:
+    - m_ResultName: Check Resources to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
+  - RuleName: Check Scene to Addressable Duplicate Dependencies
+    Results:
+    - m_ResultName: Check Scene to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
+  - RuleName: Check Sprite Atlas to Addressable Duplicate Dependencies
+    Results:
+    - m_ResultName: No issues found
+      m_Severity: 0
+  - RuleName: Build Bundle Layout
+    Results:
+    - m_ResultName: local_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/Archers.asset
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/3
+        Placeables/Warrior.asset
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/Mage.asset
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/Warrior.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/WarriorInnocuous.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/RockWarrior.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/TwoWarriors.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Explicit:Assets/RoyaleBattle/GameData/2
+        Cards/Rock.asset
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Controller/Warrior.controller
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_die.fbx
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Idle.fbx
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Attack.anim
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Packages/com.unity.render-pipelines.universal/Shaders/Utils/FallbackError.shader
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Gethit.fbx
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Animations/Warrior_Run.fbx
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Textures/UI/CardArt/Archers.png
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Model/Warrior_bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Materials/MAT_Warrior_Blue.mat
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Warrior
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_D.tif
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Warrior
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior2_D.tif
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_M.tif
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Textures/TEX_Warrior_N.tif
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Models/Characters/Warrior/Materials/MAT_Warrior_Red.mat
+      m_Severity: 0
+    - m_ResultName: duplicateassetisolation_assets_all.bundle:Explicit:Assets/RoyaleAsset/Textures/UI/CardArt/Viking.png
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Textures/TEX_Archer_M.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Textures/TEX_Archer_D.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Archer_Idle.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Archer_Run.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Archer_getHit.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Textures/TEX_Archer_N.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Archer_Die.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleBattle/GameData/3
+        Placeables/Archer.asset
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Controller/Archer.overrideController
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Model/Archer_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Model/Archer_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Model/Archer_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Model/Archer_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Materials/MAT_Archer_Blue.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Materials/MAT_Archer_Red.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Animations/Archer_attack.anim
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Archer/Archer
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Textures/TEX_Mage_N.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Materials/MAT_Mage_Blue.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Textures/TEX_Mage_A.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Red.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Mage_Gethit.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Mage_Attack.anim
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/FX/Fire/Materials/M_Fire.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleBattle/GameData/3
+        Placeables/Mage.asset
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Model/Mage_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Model/Mage_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Model/Mage_Bindpose.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Controller/Mage.overrideController
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Mage_Idle.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/FX/Shaders/AnimateShader.shader
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Packages/com.unity.render-pipelines.universal/Shaders/Particles/ParticlesUnlit.shader
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Mage_Die.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Materials/FaceFire.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Materials/MAT_Mage_Red.mat
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Animations/Mage_Run.fbx
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Textures/UI/CardArt/Mage.png
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Textures/UI/CardArt/Mage.png
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/FX/Fire/Textures/fire.tga
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Mage
+        Blue.prefab
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Textures/TEX_Mage2_D.tif
+      m_Severity: 0
+    - m_ResultName: local_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Characters/Mage/Textures/TEX_Mage_M.tif
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleBattle/GameData/3
+        Placeables/WarriorInnocuous.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleBattle/GameData/3
+        Placeables/BuildingCrusher.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Prefabs/PlaceableVariants/Rock1
+        Placeable.prefab
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Textures/TEX_ENVProps1_D.tif
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleBattle/GameData/3
+        Placeables/SmallRock.asset
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Textures/TEX_ENVProps1_N.tif
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Textures/TEX_ENVProps1_M.tif
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Textures/UI/CardArt/RockViking.png
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Textures/UI/CardArt/RockViking.png
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Model/MOD_ENVProps.fbx
+      m_Severity: 0
+    - m_ResultName: remote_assets_all.bundle:Implicit:Assets/RoyaleAsset/Models/Props/ENVProps/Materials/MAT_ENVProps1Dynamic.mat
+      m_Severity: 0
+  - RuleName: UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule
+    Results: []
