@@ -54,6 +54,7 @@ namespace RoyaleBattle
 			state = States.Attacking;
 		}
 
+		//攻击
 		public virtual void DealBlow()
 		{
 			lastBlowTime = Time.time;

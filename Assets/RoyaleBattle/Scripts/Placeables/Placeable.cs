@@ -8,7 +8,7 @@ namespace RoyaleBattle
 		public PlaceableType pType;
 
 		[HideInInspector] public Faction faction;
-		[HideInInspector] public PlaceableTarget target; //TODO:移动到ThinkingPlaceable?
+		[HideInInspector] public PlaceableTarget targetType; //TODO:移动到ThinkingPlaceable?
 		[HideInInspector] public AudioClip dieAudioClip;
 
 		public UnityAction<Placeable> OnDie;
