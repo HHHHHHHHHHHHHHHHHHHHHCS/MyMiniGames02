@@ -100,6 +100,7 @@ namespace RoyaleBattle
 			return (transform.position - target.transform.position).sqrMagnitude <= attackRange * attackRange;
 		}
 
+		//受伤
 		public float SufferDamage(float amount)
 		{
 			hitPoints -= amount;
