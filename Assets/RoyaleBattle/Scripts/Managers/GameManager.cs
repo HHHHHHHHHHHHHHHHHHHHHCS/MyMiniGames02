@@ -66,10 +66,10 @@ namespace RoyaleBattle
 			//初始化基地
 			SetupPlaceable(playersCastle, castlePData, Placeable.Faction.Player);
 			SetupPlaceable(opponentCastle, castlePData, Placeable.Faction.Opponent);
-			
+
 			cardManager.LoadDeck();
 			cpuOpponent.LoadDeck();
-			
+
 			//audioManager.GoToDefaultSnapshot();
 
 			if (autoStart)
@@ -82,7 +82,129 @@ namespace RoyaleBattle
 		{
 			cpuOpponent.StartActing();
 		}
+
+		private void Update()
+		{
+			if (gameover)
+			{
+				return;
+			}
+
+			ThinkingPlaceable targetToPass; //ref
+			ThinkingPlaceable p; //ref
+
+			for (int pN = 0; pN < allThinkingPlaceables.Count; pN++)
+			{
+				p = allThinkingPlaceables[pN];
+
+				if (updateAllPlaceables)
+				{
+					p.state = ThinkingPlaceable.States.Idle;
+				}
+
+				switch (p.state)
+				{
+					case ThinkingPlaceable.States.Idle:
+					{
+						if (p.targetType == Placeable.PlaceableTarget.None)
+						{
+							break;
+						}
+
+						bool targetFound = FindClosesInList(p.transform.position,
+							GetAttackList(p.faction, p.targetType), out targetToPass);
+						if (!targetFound)
+						{
+							Debug.LogError("No more targets!");
+						}
+						
+						p.SetTarget(targetToPass);
+						p.Seek();
+						break;
+					}
+					case ThinkingPlaceable.States.Seeking:
+					{
+						if (p.IsTargetInRange())
+						{
+							p.StartAttack();
+						}
+						break;
+					}
+					case ThinkingPlaceable.States.Attacking:
+					{
+						if (p.IsTargetInRange())
+						{
+							if (Time.time >= p.lastBlowTime + p.attackRatio)
+							{
+								p.DealBlow();
+							}
+						}
+						break;
+					}
+					case ThinkingPlaceable.States.Dead:
+					{
+						Debug.LogError("A dead ThinkingPlaceable shouldn't be in this loop");
+						break;
+					}
+				}
+
+				Projectile currProjectile;
+				float progressToTarget;
+				for (int prjN = 0; prjN < allProjectiles.Count; prjN++)
+				{
+					currProjectile = allProjectiles[prjN];
+					progressToTarget = currProjectile.Move();
+					if (progressToTarget >= 1f)
+					{
+						if (currProjectile.target.state != ThinkingPlaceable.States.Dead)
+						{
+							float newHP = currProjectile.target.SufferDamage(currProjectile.damage);
+							currProjectile.target.healthBar.SetHealth(newHP);
+						}
+						Destroy(currProjectile.gameObject);
+						allProjectiles.RemoveAt(prjN);
+					}
+				}
+			}
+			
+			updateAllPlaceables = false;//usecard set true
+		}
+
+		private List<ThinkingPlaceable> GetAttackList(Placeable.Faction f, Placeable.PlaceableTarget t)
+		{
+			switch (t)
+			{
+				case Placeable.PlaceableTarget.Both:
+					return (f == Placeable.Faction.Player) ? allOpponents : allPlayers;
+				case Placeable.PlaceableTarget.OnlyBuildings:
+					return (f == Placeable.Faction.Player) ? opponentBuildings : playerBuildings;
+				default:
+					Debug.LogError("What faction is this?? Not Player nor Opponent");
+					return null;
+			}
+		}
+
+		private bool FindClosesInList(Vector3 p, List<ThinkingPlaceable> list, out ThinkingPlaceable t)
+		{
+			t = null;
+			bool targetFound = false;
+			float closestDistanceSqr = Mathf.Infinity;
+
+			for (int i = 0; i < list.Count; i++)
+			{
+				float sqrDistance = (p - list[i].transform.position).sqrMagnitude;
+				if (sqrDistance < closestDistanceSqr)
+				{
+					t = list[i];
+					closestDistanceSqr = sqrDistance;
+					targetFound = true;
+				}
+			}
+
+			return targetFound;
+		}
 		
+
 		public void UseCard(CardData cardData, Vector3 position, Placeable.Faction pFaction)
 		{
 			for (int pNum = 0; pNum < cardData.placeablesData.Length; pNum++)
@@ -104,9 +226,7 @@ namespace RoyaleBattle
 			}
 
 			updateAllPlaceables = true; //更新AI下次的update loop
-
 		}
-		
 
 
 		private void SetupPlaceable(GameObject go, PlaceableData pDataRef, Placeable.Faction pFaction)
@@ -243,7 +363,7 @@ namespace RoyaleBattle
 				}
 				case Placeable.PlaceableType.Spell:
 				{
-					//TODO:
+					//TODO: can spells die?
 					break;
 				}
 			}
