@@ -211,7 +211,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -315,6 +333,8 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: 3176335056562668186}
+    - {fileID: 3753579635110102795}
+    - {fileID: 7713459311423335959}
 --- !u!114 &-2871000193347758436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -570,9 +590,25 @@ MonoBehaviour:
   m_Name: Card Marker
   m_EditorClassIdentifier: 
   m_Time: 6.06666666666667
-  card: {fileID: 0}
+  card: {fileID: 11400000, guid: bf66271e8592a9f49a24ec07f0709dc5, type: 2}
   position: {x: 0, y: 0, z: 7}
   faction: 1
+--- !u!114 &3753579635110102795
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84ec717fa7c14c4b949685bc877dffd, type: 3}
+  m_Name: Card Marker
+  m_EditorClassIdentifier: 
+  m_Time: 2.45
+  card: {fileID: 11400000, guid: bf66271e8592a9f49a24ec07f0709dc5, type: 2}
+  position: {x: 0, y: 0, z: -6}
+  faction: 0
 --- !u!114 &6026338132388686925
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -708,6 +744,22 @@ MonoBehaviour:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
+--- !u!114 &7713459311423335959
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 9.66666666666667
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 7c883de8c587f53429ca914028b8c2fc, type: 2}
 --- !u!114 &8055193050096643448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1023,7 +1075,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1208,7 +1278,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

@@ -595,6 +595,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -606,6 +608,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1046,6 +1049,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1057,6 +1062,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1534,7 +1540,7 @@ GameObject:
   - component: {fileID: 7741071500584641686}
   - component: {fileID: 9127210239390274919}
   - component: {fileID: 1920537943675698485}
-  - component: {fileID: 5337654603367310687}
+  - component: {fileID: 7078280194125501516}
   - component: {fileID: 167357322037240506}
   m_Layer: 0
   m_Name: Archer Red
@@ -1600,7 +1606,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!114 &5337654603367310687
+--- !u!114 &7078280194125501516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1609,13 +1615,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5537164977549460556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e608a1f1ca8e9408c80cecad0677521f, type: 3}
+  m_Script: {fileID: 11500000, guid: 04de03cec84e05747b1377ace15763e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pType: 0
   faction: 0
   targetType: 0
   dieAudioClip: {fileID: 0}
+  projectilePrefab: {fileID: 953002537907380271, guid: e12f67aa396803b4db1f156b4de6a91f, type: 3}
+  projectileSpawnPoint: {fileID: 3250296656201262495}
   state: 0
   attackType: 0
   target: {fileID: 0}
@@ -1627,9 +1635,6 @@ MonoBehaviour:
   damage: 0
   attackAudioClip: {fileID: 0}
   timeToActNext: 0
-  projectilePrefab: {fileID: 953002537907380271, guid: e12f67aa396803b4db1f156b4de6a91f,
-    type: 3}
-  projectileSpawnPoint: {fileID: 3250296656201262495}
 --- !u!82 &167357322037240506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1639,8 +1644,7 @@ AudioSource:
   m_GameObject: {fileID: 5537164977549460556}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2952065167930763301, guid: b2f83e2012e254719a32b3d8312da356,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1925,6 +1929,8 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1936,6 +1942,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

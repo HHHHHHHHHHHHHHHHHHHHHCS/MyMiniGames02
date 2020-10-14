@@ -312,5 +312,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddfad3fbe9b50a4bae25f830c310d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: {fileID: 0}
-  wholeWidget: {fileID: 0}
+  bar: {fileID: 3961260408309320698}
+  wholeWidget: {fileID: 4781777025990619723}

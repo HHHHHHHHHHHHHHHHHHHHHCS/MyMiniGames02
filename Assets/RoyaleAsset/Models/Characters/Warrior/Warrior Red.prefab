@@ -986,6 +986,7 @@ GameObject:
   - component: {fileID: 6826973555475864791}
   - component: {fileID: 7657649297414108623}
   - component: {fileID: 7321173093633038108}
+  - component: {fileID: 3082328153455048118}
   - component: {fileID: 1281781896090838426}
   m_Layer: 0
   m_Name: Warrior Red
@@ -1051,6 +1052,35 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
+--- !u!114 &3082328153455048118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701704621631426976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04de03cec84e05747b1377ace15763e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pType: 0
+  faction: 0
+  targetType: 0
+  dieAudioClip: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  state: 0
+  attackType: 0
+  target: {fileID: 0}
+  healthBar: {fileID: 0}
+  hitPoints: 0
+  attackRange: 0
+  attackRatio: 0
+  lastBlowTime: -1000
+  damage: 0
+  attackAudioClip: {fileID: 0}
+  timeToActNext: 0
 --- !u!82 &1281781896090838426
 AudioSource:
   m_ObjectHideFlags: 0
