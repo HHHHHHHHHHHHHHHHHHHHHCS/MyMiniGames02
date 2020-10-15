@@ -81,6 +81,10 @@ namespace RoyaleBattle
 			Card cardScript = backupCardTransform.GetComponent<Card>();
 			cardScript.cardId = position;
 			cards[position] = cardScript;
+			
+			cardScript.OnTapDownAction += CardTapped;
+			cardScript.OnDragAction += CardDragged;
+			cardScript.OnTapReleaseAction += CardReleased;
 		}
 
 		private void CardTapped(int cardId)

@@ -89,12 +89,17 @@ namespace RoyaleBattle
 			{
 				return;
 			}
-
+			
 			ThinkingPlaceable targetToPass; //ref
 			ThinkingPlaceable p; //ref
 
 			for (int pN = 0; pN < allThinkingPlaceables.Count; pN++)
 			{
+				if (gameover)
+				{
+					return;
+				}
+				
 				p = allThinkingPlaceables[pN];
 
 				if (updateAllPlaceables)
@@ -115,6 +120,7 @@ namespace RoyaleBattle
 							GetAttackList(p.faction, p.targetType), out targetToPass);
 						if (!targetFound)
 						{
+							//this should only happen on Game Over
 							Debug.LogError("No more targets!");
 						}
 						
@@ -306,7 +312,7 @@ namespace RoyaleBattle
 			cinematicsManager.PlayCollapseCutscene(c.faction);
 			c.OnDie -= OnCastleDead;
 			gameover = true; //stop and thinking loop
-
+			
 			ThinkingPlaceable thkPl;
 			for (int pN = 0; pN < allThinkingPlaceables.Count; pN++)
 			{

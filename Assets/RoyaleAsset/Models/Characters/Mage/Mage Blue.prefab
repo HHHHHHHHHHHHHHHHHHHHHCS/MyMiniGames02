@@ -359,6 +359,10 @@ PrefabInstance:
       propertyPath: attackSource
       value: 
       objectReference: {fileID: 8584991783908798098}
+    - target: {fileID: 2348266242741588425, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2348266243572087884, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.012344837

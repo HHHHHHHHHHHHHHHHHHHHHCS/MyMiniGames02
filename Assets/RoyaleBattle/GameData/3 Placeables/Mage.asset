@@ -15,11 +15,11 @@ MonoBehaviour:
   pType: 0
   associatedPrefab: {fileID: 1122871589, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
   alternatePrefab: {fileID: 8584991783828831444, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
-  attackType: 0
+  attackType: 1
   targetType: 1
   attackRatio: 1.5
   damagePerAttack: 3
-  attackRange: 4
+  attackRange: 8
   hitPoints: 10
   attackClip: {fileID: 0}
   dieClip: {fileID: 0}

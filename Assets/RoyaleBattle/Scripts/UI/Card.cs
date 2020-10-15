@@ -30,7 +30,7 @@ namespace RoyaleBattle
 
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			OnTapReleaseAction?.Invoke(cardId);
+			OnTapDownAction?.Invoke(cardId);
 		}
 
 		public void OnDrag(PointerEventData eventData)
@@ -40,7 +40,7 @@ namespace RoyaleBattle
 
 		public void OnPointerUp(PointerEventData eventData)
 		{
-			OnTapDownAction?.Invoke(cardId);
+			OnTapReleaseAction?.Invoke(cardId);
 		}
 		
 		public void ChangeActiveState(bool isActive)
