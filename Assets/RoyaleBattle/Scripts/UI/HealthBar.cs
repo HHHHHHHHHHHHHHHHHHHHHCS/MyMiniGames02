@@ -7,6 +7,7 @@ namespace RoyaleBattle
 	{
 		public RectTransform bar;
 		public GameObject wholeWidget;
+		public Vector3 offset = new Vector3(0, 30, 0);
 
 		private bool isHidden = true;
 		private float originHP;
@@ -48,11 +49,11 @@ namespace RoyaleBattle
 			bar.localScale = new Vector3(ratio, 1f, 1f);
 		}
 
-		public void Move()
+		public void Move(Camera cam)
 		{
 			if (transformToFollow != null)
 			{
-				transform.position = transformToFollow.position;
+				transform.position = cam.WorldToScreenPoint(transformToFollow.position) + offset;
 			}
 		}
 	}

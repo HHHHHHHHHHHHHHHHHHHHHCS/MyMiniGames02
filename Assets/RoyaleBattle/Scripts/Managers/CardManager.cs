@@ -81,7 +81,7 @@ namespace RoyaleBattle
 			Card cardScript = backupCardTransform.GetComponent<Card>();
 			cardScript.cardId = position;
 			cards[position] = cardScript;
-			
+
 			cardScript.OnTapDownAction += CardTapped;
 			cardScript.OnDragAction += CardDragged;
 			cardScript.OnTapReleaseAction += CardReleased;
@@ -139,6 +139,8 @@ namespace RoyaleBattle
 
 		private void CardReleased(int cardId)
 		{
+			forbiddenAreaRenderer.enabled = false;
+
 			RaycastHit hit;
 			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -154,6 +156,11 @@ namespace RoyaleBattle
 
 				StartCoroutine(PromoteCardFromDeck(cardId, 0.2f));
 				StartCoroutine(AddCardToDeck(0.6f));
+			}
+			else
+			{
+				cards[cardId].GetComponent<RectTransform>().DOAnchorPos(new Vector2(210f * (cardId+1), 0f),
+					.2f).SetEase(Ease.OutQuad);
 			}
 		}
 

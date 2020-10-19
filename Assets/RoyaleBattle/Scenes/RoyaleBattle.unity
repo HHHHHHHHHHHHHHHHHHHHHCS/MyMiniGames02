@@ -1757,7 +1757,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797290198}
-  m_LocalRotation: {x: 0.23027986, y: 0.24231555, z: -0.059324026, w: 0.94060355}
+  m_LocalRotation: {x: 0.23027983, y: 0.24231552, z: -0.05932401, w: 0.94060355}
   m_LocalPosition: {x: -5.64, y: 8.12, z: -21.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2267,7 +2267,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038034730}
-  m_LocalRotation: {x: 0.5809495, y: 3.804713e-15, z: -4.044902e-15, w: 0.8139397}
+  m_LocalRotation: {x: 0.5809495, y: -2.2350574e-15, z: 3.1821304e-15, w: 0.8139397}
   m_LocalPosition: {x: 0, y: 106.63, z: -38.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3467,7 +3467,7 @@ GameObject:
   - component: {fileID: 1429639681}
   - component: {fileID: 1429639680}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3618,6 +3618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a265b0f16b14c8e46a089389dc03d979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiRoot: {fileID: 1429639683}
   healthBarPrefab: {fileID: 8825841591300110837, guid: 64386020bc1b8b74b87cfae612b70d58, type: 3}
   gameOverUI: {fileID: 1027250513}
 --- !u!114 &1641014790
@@ -5822,7 +5823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857620259}
-  m_LocalRotation: {x: 0.5809495, y: 3.804713e-15, z: -4.044902e-15, w: 0.8139397}
+  m_LocalRotation: {x: 0.5809495, y: -2.2350574e-15, z: 3.1821304e-15, w: 0.8139397}
   m_LocalPosition: {x: 0, y: 106.63, z: -38.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
