@@ -34,9 +34,10 @@ namespace RoyaleBattle
 
 			public LayerMask layerMask;
 
+			//layer1->1 2->2 3->4 4->8 5->16 n->2^(n-1)
 			public uint renderingLayerMask;
-			
-			public string[] passNames;
+
+			public string[] shaderTags;
 
 			public FilterSettings()
 			{
@@ -51,9 +52,9 @@ namespace RoyaleBattle
 		{
 			public string passTag = "RenderObjectsFeature";
 
-			public RenderPassEvent Event = RenderPassEvent.AfterRenderingOpaques;
+			public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
 
-			public FilteringSettings filterSettings = new FilteringSettings();
+			public FilterSettings filterSettings = new FilterSettings();
 
 			public Material overrideMaterial = null;
 
@@ -69,15 +70,19 @@ namespace RoyaleBattle
 
 			public CustomCameraSettings cameraSettings = new CustomCameraSettings();
 		}
-		
-		//TODO:layer1->1 2->2 3->4 4->8 5->16
+
+		public RenderObjectsSettings settings = new RenderObjectsSettings();
+
+		private MyRenderObjectsPass renderObjectsPass;
 
 		public override void Create()
 		{
+			renderObjectsPass = new MyRenderObjectsPass(settings);
 		}
 
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
 		{
+			renderer.EnqueuePass(renderObjectsPass);
 		}
 	}
 }
