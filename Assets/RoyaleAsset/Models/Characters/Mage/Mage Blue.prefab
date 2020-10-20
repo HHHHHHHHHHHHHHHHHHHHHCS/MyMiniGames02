@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 677874269, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 677874271, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Bones.Array.data[0]
@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 8584991783703064600}
+    - target: {fileID: 677874271, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1122871589, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Name
       value: Mage Blue
@@ -73,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2022460059, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2022460061, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: m_Bones.Array.data[0]
@@ -355,6 +359,10 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 8584991784184851166}
+    - target: {fileID: 2022460061, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1107439388053995260, guid: ddbc89a2e5731354497399c2803d9354, type: 3}
       propertyPath: attackSource
       value: 

@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3445393752998984087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c9bbc71ef79e548bc07e2f4726a3b2, type: 3}
+  m_Name: BlueTeamDither
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: BlueTeamDither
+    renderPassEvent: 300
+    filterSettings:
+      renderQueueType: 0
+      layerMask:
+        serializedVersion: 2
+        m_Bits: 4096
+      renderingLayerMask: 2
+      shaderTags: []
+    overrideMaterial: {fileID: 2100000, guid: c56db548bad2c6a46b3c69beb18c124e, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,7 +54,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RendererFeatures:
   - {fileID: 7356950600588670102}
-  m_RendererFeatureMap: 96342faa97231966
+  - {fileID: -3445393752998984087}
+  - {fileID: 7813509179037698524}
+  m_RendererFeatureMap: 96342faa97231966694625d9a2802fd0dcc9cb5933296f6c
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -24,10 +66,10 @@ MonoBehaviour:
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -46,24 +88,64 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07c9bbc71ef79e548bc07e2f4726a3b2, type: 3}
-  m_Name: NewMyRenderObjectsFeature
+  m_Name: RedTeamDither
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: RenderObjectsFeature
+    passTag: RedTeamDither
     renderPassEvent: 300
     filterSettings:
       renderQueueType: 0
       layerMask:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 4096
+      renderingLayerMask: 1
+      shaderTags: []
+    overrideMaterial: {fileID: 2100000, guid: aefc3091541e84d47af8b9c1167e1d70, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &7813509179037698524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c9bbc71ef79e548bc07e2f4726a3b2, type: 3}
+  m_Name: NewMyRenderObjectsFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: NewMyRenderObjectsFeature
+    renderPassEvent: 300
+    filterSettings:
+      renderQueueType: 0
+      layerMask:
+        serializedVersion: 2
+        m_Bits: 4096
       renderingLayerMask: 0
       shaderTags: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 0
     depthCompareFunction: 4
-    enableWrite: 1
+    enableWrite: 0
     stencilSettings:
       overrideStencilState: 0
       stencilReference: 0

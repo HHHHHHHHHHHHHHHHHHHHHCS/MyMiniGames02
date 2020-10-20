@@ -78,6 +78,21 @@ namespace RoyaleBattle
 		public override void Create()
 		{
 			renderObjectsPass = new MyRenderObjectsPass(settings);
+
+			renderObjectsPass.overrideMaterial = settings.overrideMaterial;
+			renderObjectsPass.overrideMaterialPassIndex = settings.overrideMaterialPassIndex;
+
+			if (settings.overrideDepthState)
+			{
+				renderObjectsPass.SetDepthState(settings.enableWrite, settings.depthCompareFunction);
+			}
+
+			if (settings.stencilSettings.overrideStencilState)
+			{
+				renderObjectsPass.SetStencilState(settings.stencilSettings.stencilReference,
+					settings.stencilSettings.stencilCompareFunction, settings.stencilSettings.passOperation,
+					settings.stencilSettings.failOperation, settings.stencilSettings.zFailOperation);
+			}
 		}
 
 		public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
