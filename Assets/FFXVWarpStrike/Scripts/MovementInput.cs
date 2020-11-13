@@ -1,82 +1,82 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(CharacterController))]
-public class MovementInput : MonoBehaviour
+namespace FFXVWarpStrike
 {
-	//TODO:
-	
-	public bool canMove;
-
-	public float velocity = 9;
-	[Space] public Vector3 desiredMoveDirection;
-	public bool blockRotationPlayer;
-	public float desiredRotationSpeed = 0.1f;
-	public float Speed;
-	public float allowPlayerRotation = 0.1f;
-	public Camera cam;
-	public CharacterController controller;
-
-	private float verticalVel;
-	private Vector3 moveVector;
-
-	private void Start()
+	[RequireComponent(typeof(CharacterController))]
+	public class MovementInput : MonoBehaviour
 	{
-		cam = Camera.main;
-		controller = GetComponent<CharacterController>();
-	}
+		public bool canMove;
 
-	private void Update()
-	{
-		if (!canMove)
-			return;
+		public float velocity = 9;
+		[Space] public Vector3 desiredMoveDirection;
+		public bool blockRotationPlayer;
+		public float desiredRotationSpeed = 0.1f;
+		public float allowPlayerRotation = 0.1f;
 
-		InputMagnitude();
-	}
+		[HideInInspector] public float speed;
 
-	private void InputMagnitude()
-	{
-		float inputX = Input.GetAxis("Horizontal");
-		float inputZ = Input.GetAxis("Vertical");
+		private Camera cam;
+		private CharacterController controller;
+		private float verticalVel;
+		private Vector3 moveVector;
 
-		Speed = new Vector2(inputX, inputZ).sqrMagnitude;
-
-		if (Speed > allowPlayerRotation)
+		private void Start()
 		{
-			PlayerMoveAndRotation(inputX, inputZ);
+			cam = Camera.main;
+			controller = GetComponent<CharacterController>();
 		}
 
-		// else if (Speed < allowPlayerRotation)
-		// {
-		// }
-	}
-
-	void PlayerMoveAndRotation(float inputX, float inputZ)
-	{
-		var forward = cam.transform.forward;
-		var right = cam.transform.right;
-
-		forward.y = 0f;
-		right.y = 0f;
-
-		forward.Normalize();
-		right.Normalize();
-
-		desiredMoveDirection = forward * inputZ + right * inputX;
-
-		if (blockRotationPlayer == false)
+		private void Update()
 		{
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection),
-				desiredRotationSpeed);
-			controller.Move(desiredMoveDirection * Time.deltaTime * velocity);
-		}
-	}
+			speed = 0;
+			if (!canMove)
+				return;
 
-	public void RotateTowards(Transform t)
-	{
-		//like look at
-		transform.rotation = Quaternion.LookRotation(t.position - transform.position);
+			InputMagnitude();
+		}
+
+		private void InputMagnitude()
+		{
+			float inputX = Input.GetAxis("Horizontal");
+			float inputZ = Input.GetAxis("Vertical");
+
+			speed = new Vector2(inputX, inputZ).sqrMagnitude;
+
+			if (speed > allowPlayerRotation)
+			{
+				PlayerMoveAndRotation(inputX, inputZ);
+			}
+
+			// else if (Speed < allowPlayerRotation)
+			// {
+			// }
+		}
+
+		void PlayerMoveAndRotation(float inputX, float inputZ)
+		{
+			var forward = cam.transform.forward;
+			var right = cam.transform.right;
+
+			forward.y = 0f;
+			right.y = 0f;
+
+			forward.Normalize();
+			right.Normalize();
+
+			desiredMoveDirection = forward * inputZ + right * inputX;
+
+			if (blockRotationPlayer == false)
+			{
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection),
+					desiredRotationSpeed);
+				controller.Move(desiredMoveDirection * Time.deltaTime * velocity);
+			}
+		}
+
+		public void RotateTowards(Transform t)
+		{
+			//like look at
+			transform.rotation = Quaternion.LookRotation(t.position - transform.position);
+		}
 	}
 }
