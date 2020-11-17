@@ -7,6 +7,7 @@ using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 namespace FFXVWarpStrike
@@ -70,6 +71,11 @@ namespace FFXVWarpStrike
 
 		private void Update()
 		{
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				Cursor.visible = !Cursor.visible;
+			}
+
 			anim.SetFloat(Blend_ID, moveInput.speed);
 
 			if (!moveInput.canMove)
@@ -114,11 +120,6 @@ namespace FFXVWarpStrike
 				swordMesh.enabled = true;
 				anim.SetTrigger(Slash_ID);
 			}
-
-			if (Input.GetKeyDown(KeyCode.Escape))
-			{
-				Cursor.visible = !Cursor.visible;
-			}
 		}
 
 		private void UserInterface()
@@ -130,7 +131,7 @@ namespace FFXVWarpStrike
 			}
 
 
-			var temp = mainCamera.WorldToScreenPoint(target.position + (Vector3) uiOffset);
+			var temp = mainCamera.WorldToScreenPoint(target.position) + (Vector3) uiOffset;
 			if (temp.z > 0)
 			{
 				//z=0优化合批
@@ -197,11 +198,11 @@ namespace FFXVWarpStrike
 			Destroy(clone.GetComponent<MovementInput>());
 			Destroy(clone.GetComponent<CharacterController>());
 
+			glowMaterial.DOFloat(2, "_AlphaThreshold", 5f).OnComplete(() => Destroy(clone));
 			SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
 			foreach (var skinnedMeshRenderer in skinMeshList)
 			{
 				skinnedMeshRenderer.material = glowMaterial;
-				skinnedMeshRenderer.material.DOFloat(2, "_AlphaThreshold", 5f).OnComplete(() => Destroy(clone));
 			}
 
 			ShowBody(false);
@@ -216,7 +217,7 @@ namespace FFXVWarpStrike
 			blueTrail.Play();
 			whiteTrail.Play();
 
-			DOVirtual.Float(0, -80, 0.2f, DistortionAmount);
+			DOVirtual.Float(0, -0.8f, 0.2f, DistortionAmount);
 			DOVirtual.Float(1f, 2f, 0.2f, ScaleAmount);
 		}
 
@@ -228,19 +229,15 @@ namespace FFXVWarpStrike
 			sword.localPosition = swordOrigPos;
 			sword.localEulerAngles = swordOrigRot;
 
-			SkinnedMeshRenderer[] skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
-			foreach (var skinnedMeshRenderer in skinnedMeshRenderers)
-			{
-				GlowAmount(30);
-				DOVirtual.Float(30, 0, 0.5f, GlowAmount);
-			}
+			GlowAmount(30);
+			DOVirtual.Float(30, 0, 0.5f, GlowAmount);
 
 			//Auto Desotry
 			Instantiate(hitParticle, sword.position, Quaternion.identity);
 
 			StartCoroutine(HideSword());
 			StartCoroutine(PlayAnimation());
-			StartCoroutine(StopPartciles());
+			StartCoroutine(StopParticles());
 
 			isLocked = false;
 			LockInterface(false);
@@ -248,43 +245,75 @@ namespace FFXVWarpStrike
 
 			impulse.GenerateImpulse(Vector3.right);
 
-			DOVirtual.Float(-80, 0, 0.2f, DistortionAmount);
+			DOVirtual.Float(-0.8f, 0, 0.2f, DistortionAmount);
 			DOVirtual.Float(2f, 1f, 0.1f, ScaleAmount);
 		}
 
 		private IEnumerator PlayAnimation()
 		{
-			throw new System.NotImplementedException();
+			yield return new WaitForSeconds(0.2f);
+			anim.speed = 1;
 		}
-		
-		private IEnumerator StopPartciles()
+
+		private IEnumerator StopParticles()
 		{
-			throw new System.NotImplementedException();
+			yield return new WaitForSeconds(0.2f);
+			blueTrail.Stop();
+			whiteTrail.Stop();
 		}
 
 		private IEnumerator HideSword()
 		{
-			throw new System.NotImplementedException();
+			yield return new WaitForSeconds(0.8f);
+			swordParticle.Play();
+
+			GameObject swordClone = GameObject.Instantiate(sword.gameObject, sword.position, sword.rotation);
+			swordMesh.enabled = false;
+
+			MeshRenderer swordMR = swordClone.GetComponentInChildren<MeshRenderer>();
+
+			glowMaterial.DOFloat(1, "_AlphaThreshold", 0.3f).OnComplete(() => Destroy(swordClone));
+
+			Material[] materials = new Material[swordMR.sharedMaterials.Length];
+
+			for (int i = 0; i < materials.Length; i++)
+			{
+				materials[i] = glowMaterial;
+			}
+
+			swordMR.materials = materials;
+
+			moveInput.canMove = true;
 		}
 
-		private void ShowBody(bool b)
+		private void ShowBody(bool state)
 		{
-			throw new System.NotImplementedException();
+			SkinnedMeshRenderer[] skinMeshList = GetComponentsInChildren<SkinnedMeshRenderer>();
+			foreach (var smr in skinMeshList)
+			{
+				smr.enabled = state;
+			}
 		}
-		
-		private void GlowAmount(float i)
+
+		private void GlowAmount(float x)
 		{
-			throw new System.NotImplementedException();
+			SkinnedMeshRenderer[] skinMeshList = GetComponentsInChildren<SkinnedMeshRenderer>();
+			foreach (var smr in skinMeshList)
+			{
+				smr.material.SetVector("_FresnelAmount", new Vector4(x, x, x, x));
+			}
 		}
-
-
 
 		private void DistortionAmount(float value)
 		{
+			postProfile.TryGet(out LensDistortion ld);
+			ld.intensity.value = value;
 		}
 
 		private void ScaleAmount(float value)
 		{
+			postProfile.TryGet(out LensDistortion ld);
+			ld.scale.value = value;
 		}
 	}
 }
