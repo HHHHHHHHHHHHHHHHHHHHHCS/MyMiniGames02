@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Cinemachine;
 using DG.Tweening;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -14,8 +12,11 @@ namespace FFXVWarpStrike
 {
 	public class WeaponCtrl : MonoBehaviour
 	{
-		private static readonly int Blend_ID = Animator.StringToHash("Blend");
+		private static readonly int Blend_ID = Animator.StringToHash("blend");
 		private static readonly int Slash_ID = Animator.StringToHash("slash");
+		private static readonly int Hit_ID = Animator.StringToHash("hit");
+
+		public static WeaponCtrl Instance { get; private set; }
 
 
 		public bool isLocked;
@@ -30,6 +31,9 @@ namespace FFXVWarpStrike
 		private Vector3 swordOrigPos;
 		private MeshRenderer swordMesh;
 
+		[Space, Header("Volume")] public Volume postVolume;
+		private VolumeProfile postProfile;
+
 		[Space, Header("Material")] public Material glowMaterial;
 
 		[Space, Header("Particles")] public ParticleSystem blueTrail;
@@ -42,26 +46,26 @@ namespace FFXVWarpStrike
 		public Image lockAim;
 		public Vector2 uiOffset;
 
-		private List<SkillTarget> screenTargets;
+		private HashSet<SkillTarget> screenTargets;
 		private Transform target;
 
-		private Camera mainCamera;
+		private Camera mainCam;
 		private MovementInput moveInput;
 		private Animator anim;
-		private Volume postVolume;
-		private VolumeProfile postProfile;
+
 
 		private void Awake()
 		{
-			Cursor.visible = true;
+			Instance = this;
 
-			screenTargets = FindObjectsOfType<SkillTarget>().ToList();
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
 
+			screenTargets = new HashSet<SkillTarget>();
 			moveInput = GetComponent<MovementInput>();
 			anim = GetComponent<Animator>();
 			impulse = cameraFreeLook.GetComponent<CinemachineImpulseSource>();
-			mainCamera = Camera.main;
-			postVolume = mainCamera.GetComponent<Volume>();
+			mainCam = Camera.main; //2020 之后 camera.main 优化了   但是代码习惯
 			postProfile = postVolume.profile;
 			swordOrigPos = sword.localPosition;
 			swordOrigRot = sword.localEulerAngles;
@@ -71,9 +75,10 @@ namespace FFXVWarpStrike
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Escape))
+			if (!Cursor.visible && Input.GetKeyDown(KeyCode.Escape))
 			{
-				Cursor.visible = !Cursor.visible;
+				Cursor.visible = true;
+				Cursor.lockState = CursorLockMode.None;
 			}
 
 			anim.SetFloat(Blend_ID, moveInput.speed);
@@ -83,14 +88,14 @@ namespace FFXVWarpStrike
 				return;
 			}
 
-			if (screenTargets != null && screenTargets.Count <= 0)
+			if (screenTargets.Count <= 0)
 			{
 				return;
 			}
 
 			if (!isLocked)
 			{
-				target = screenTargets[TargetIndex()].transform;
+				target = TargetIndex()?.transform;
 			}
 
 			UserInterface();
@@ -119,6 +124,12 @@ namespace FFXVWarpStrike
 				swordParticle.Play();
 				swordMesh.enabled = true;
 				anim.SetTrigger(Slash_ID);
+
+				if (Cursor.visible)
+				{
+					Cursor.visible = false;
+					Cursor.lockState = CursorLockMode.Locked;
+				}
 			}
 		}
 
@@ -127,11 +138,10 @@ namespace FFXVWarpStrike
 			if (!target)
 			{
 				aim.color = Color.clear;
-				return;
 			}
 
 
-			var temp = mainCamera.WorldToScreenPoint(target.position) + (Vector3) uiOffset;
+			var temp = mainCam.WorldToScreenPoint(target.position) + (Vector3) uiOffset;
 			if (temp.z > 0)
 			{
 				//z=0优化合批
@@ -156,37 +166,39 @@ namespace FFXVWarpStrike
 			aim.transform.DORotate(Vector3.forward * 90f, 0.15f, RotateMode.LocalAxisAdd);
 		}
 
-		private int TargetIndex()
+		private SkillTarget TargetIndex()
 		{
-			float minScreenDistance = Vector2.Distance(
-				mainCamera.WorldToScreenPoint(screenTargets[0].transform.position),
-				new Vector2(Screen.width / 2f, Screen.height / 2f));
-			float minWorldDistance = Vector3.Distance(screenTargets[0].transform.position, transform.position);
-			int index = 0;
+			SkillTarget target = null;
+			float minScreenDistance = 0;
+			float minWorldDistance = 0;
 
-			for (int i = 1; i < screenTargets.Count; i++)
+			foreach (var item in screenTargets)
 			{
-				float tempDistance = Vector2.Distance(
-					mainCamera.WorldToScreenPoint(screenTargets[i].transform.position),
-					new Vector2(Screen.width / 2f, Screen.height / 2f));
-
-				if (minScreenDistance > tempDistance)
+				if (target == null)
 				{
-					minScreenDistance = tempDistance;
-					index = i;
+					target = item;
+					minScreenDistance = Vector2.Distance(
+						mainCam.WorldToScreenPoint(target.transform.position),
+						new Vector2(Screen.width / 2f, Screen.height / 2f));
+					minWorldDistance = Vector3.Distance(target.transform.position, transform.position);
 				}
-				else if (minScreenDistance == tempDistance)
+				else
 				{
-					float wd = Vector3.Distance(screenTargets[i].transform.position, transform.position);
-					if (minWorldDistance > wd)
+					float tempDistance = Vector2.Distance(
+						mainCam.WorldToScreenPoint(item.transform.position),
+						new Vector2(Screen.width / 2f, Screen.height / 2f));
+					float tempWD = Vector3.Distance(item.transform.position, transform.position);
+
+					if (minScreenDistance > tempDistance || (minScreenDistance == tempDistance && minWorldDistance > tempWD))
 					{
-						minWorldDistance = wd;
-						index = i;
+						target = item;
+						minScreenDistance = tempDistance;
+						minWorldDistance = tempWD;
 					}
 				}
 			}
 
-			return index;
+			return target;
 		}
 
 		public void Warp()
@@ -234,6 +246,9 @@ namespace FFXVWarpStrike
 
 			//Auto Desotry
 			Instantiate(hitParticle, sword.position, Quaternion.identity);
+
+			target.GetComponentInParent<Animator>().SetTrigger(Hit_ID);
+			target.parent.DOMove(target.position + transform.forward, 0.5f);
 
 			StartCoroutine(HideSword());
 			StartCoroutine(PlayAnimation());
@@ -314,6 +329,16 @@ namespace FFXVWarpStrike
 		{
 			postProfile.TryGet(out LensDistortion ld);
 			ld.scale.value = value;
+		}
+
+		public void AddSkillTarget(SkillTarget st)
+		{
+			screenTargets.Add(st);
+		}
+
+		public void RemoveSkillTarget(SkillTarget st)
+		{
+			screenTargets.Remove(st);
 		}
 	}
 }

@@ -50,7 +50,7 @@ namespace GodofWarAxeThrow
 		private void Start()
 		{
 			Cursor.visible = false;
-			Cursor.lockState = CursorLockMode.Confined;
+			Cursor.lockState = CursorLockMode.Locked;
 
 			animator = GetComponent<Animator>();
 			input = GetComponent<MovementInput>();

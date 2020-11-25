@@ -6256,11 +6256,12 @@ MonoBehaviour:
   weaponDuration: 0.25
   sword: {fileID: 1892996702}
   swordHand: {fileID: 888277634}
+  postVolume: {fileID: 1148846322}
   glowMaterial: {fileID: 0}
   blueTrail: {fileID: 1529089896}
   whiteTrail: {fileID: 1807332649}
   swordParticle: {fileID: 16540488}
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 5061302559406101236, guid: cede6b6133b4a5949a0bf22bc20cf8ad, type: 3}
   aim: {fileID: 762563043}
   lockAim: {fileID: 503796724}
   uiOffset: {x: 0, y: 0}
@@ -6701,7 +6702,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496271526}
-  m_LocalRotation: {x: 0.14521314, y: -5.1799038e-15, z: 7.130392e-16, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.00000003296683, z: -0.000000004838502, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11747,7 +11748,7 @@ MonoBehaviour:
     m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
-    m_Wrap: 0
+    m_Wrap: 1
     m_Recentering:
       m_enabled: 0
       m_WaitTime: 1
@@ -11785,7 +11786,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584537429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
   m_Name: 

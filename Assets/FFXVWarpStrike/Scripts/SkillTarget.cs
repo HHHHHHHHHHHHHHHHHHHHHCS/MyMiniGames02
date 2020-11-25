@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillTarget : MonoBehaviour
+namespace FFXVWarpStrike
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public class SkillTarget : MonoBehaviour
+	{
+		private WeaponCtrl warp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		void Start()
+		{
+			warp = WeaponCtrl.Instance;
+		}
+
+		private void OnBecameVisible()
+		{
+			if (warp)
+			{
+				warp.AddSkillTarget(this);
+			}
+		}
+
+		private void OnBecameInvisible()
+		{
+			if (warp)
+			{
+				warp.RemoveSkillTarget(this);
+			}
+		}
+	}
 }

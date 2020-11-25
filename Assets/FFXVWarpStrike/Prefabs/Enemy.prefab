@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 134209077131010064}
   - component: {fileID: 134209077140000378}
   - component: {fileID: 134209076044918692}
-  - component: {fileID: 134209076044918693}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -560,18 +559,6 @@ CapsuleCollider:
   m_Height: 2.46
   m_Direction: 1
   m_Center: {x: 0, y: 0.79, z: 0}
---- !u!114 &134209076044918693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134209077130656816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5e0860ba9c13fb49b2280b5c7029cbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &134209077130656818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134209077131010456}
   - component: {fileID: 134209077144318136}
+  - component: {fileID: 5710365102163902029}
   m_Layer: 0
   m_Name: Alpha_Surface
   m_TagString: Untagged
@@ -1240,6 +1228,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0000009536743, y: -0.09565458, z: 0.021622837}
     m_Extent: {x: 0.97342485, y: 0.90236723, z: 0.18213426}
   m_DirtyAABB: 0
+--- !u!114 &5710365102163902029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134209077130657208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e0860ba9c13fb49b2280b5c7029cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &134209077130657210
 GameObject:
   m_ObjectHideFlags: 0
