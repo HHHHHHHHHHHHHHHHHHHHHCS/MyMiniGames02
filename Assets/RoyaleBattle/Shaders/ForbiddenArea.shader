@@ -29,8 +29,11 @@
 				float2 uv: TEXCOORD0;
 				float4 vertex: SV_POSITION;
 			};
-			
+
+			CBUFFER_START(UnityPerMaterial)
 			float4 _MainColor;
+			CBUFFER_END
+			
 			
 			float2 RotateDegrees(float2 uv, float2  center, float rotation)
 			{

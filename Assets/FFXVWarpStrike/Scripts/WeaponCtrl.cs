@@ -141,7 +141,7 @@ namespace FFXVWarpStrike
 			}
 
 
-			var temp = mainCam.WorldToScreenPoint(target.position) + (Vector3) uiOffset;
+			var temp = mainCam.WorldToScreenPoint(target.position + (Vector3) uiOffset);
 			if (temp.z > 0)
 			{
 				//z=0优化合批
@@ -189,7 +189,8 @@ namespace FFXVWarpStrike
 						new Vector2(Screen.width / 2f, Screen.height / 2f));
 					float tempWD = Vector3.Distance(item.transform.position, transform.position);
 
-					if (minScreenDistance > tempDistance || (minScreenDistance == tempDistance && minWorldDistance > tempWD))
+					if (minScreenDistance > tempDistance ||
+					    (minScreenDistance == tempDistance && minWorldDistance > tempWD))
 					{
 						target = item;
 						minScreenDistance = tempDistance;

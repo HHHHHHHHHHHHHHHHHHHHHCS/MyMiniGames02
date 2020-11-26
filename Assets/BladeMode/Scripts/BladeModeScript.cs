@@ -232,7 +232,6 @@ namespace BladeMode
 		{
 			if (profile.TryGet(typeof(ChromaticAberration), out ChromaticAberration ca))
 			{
-				Debug.Log(x);
 				ca.intensity.value = x;
 			}
 		}
