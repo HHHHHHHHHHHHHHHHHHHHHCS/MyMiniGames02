@@ -12,6 +12,8 @@ namespace FFXVWarpStrike
 {
 	public class WeaponCtrl : MonoBehaviour
 	{
+		private const string c_AlphaThreshold = "_AlphaThreshold";
+	
 		private static readonly int Blend_ID = Animator.StringToHash("blend");
 		private static readonly int Slash_ID = Animator.StringToHash("slash");
 		private static readonly int Hit_ID = Animator.StringToHash("hit");
@@ -211,11 +213,16 @@ namespace FFXVWarpStrike
 			Destroy(clone.GetComponent<MovementInput>());
 			Destroy(clone.GetComponent<CharacterController>());
 
-			glowMaterial.DOFloat(2, "_AlphaThreshold", 5f).OnComplete(() => Destroy(clone));
+			var instantiateMat = Instantiate(glowMaterial);
+			instantiateMat.DOFloat(2, c_AlphaThreshold, 5f).OnComplete(() =>
+			{
+				Destroy(clone);
+				Destroy(instantiateMat);
+			});
 			SkinnedMeshRenderer[] skinMeshList = clone.GetComponentsInChildren<SkinnedMeshRenderer>();
 			foreach (var skinnedMeshRenderer in skinMeshList)
 			{
-				skinnedMeshRenderer.material = glowMaterial;
+				skinnedMeshRenderer.material = instantiateMat;
 			}
 
 			ShowBody(false);
@@ -288,13 +295,18 @@ namespace FFXVWarpStrike
 
 			MeshRenderer swordMR = swordClone.GetComponentInChildren<MeshRenderer>();
 
-			glowMaterial.DOFloat(1, "_AlphaThreshold", 0.3f).OnComplete(() => Destroy(swordClone));
+			var instantiateMat = Instantiate(glowMaterial);
+			instantiateMat.DOFloat(1, c_AlphaThreshold, 0.3f).OnComplete(() =>
+			{
+				Destroy(swordClone);
+				Destroy(instantiateMat);
+			});
 
 			Material[] materials = new Material[swordMR.sharedMaterials.Length];
 
 			for (int i = 0; i < materials.Length; i++)
 			{
-				materials[i] = glowMaterial;
+				materials[i] = instantiateMat;
 			}
 
 			swordMR.materials = materials;

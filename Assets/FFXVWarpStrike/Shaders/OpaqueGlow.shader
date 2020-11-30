@@ -1,4 +1,5 @@
-Shader "My/FFXVWarpStrike/FresnelGlow"
+//TODO:
+Shader "My/FFXVWarpStrike/OpaqueGlow"
 {
 	Properties
 	{
@@ -16,10 +17,11 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 		{
 			Tags { /* "LightMode" = "UniversalForwardOnly"*/ }
 			
+//TODO:
 			Blend One One
 			Cull Back
 			ZTest LEqual
-			ZWrite Off
+			ZWrite On
 			
 			HLSLPROGRAM
 			
@@ -291,6 +293,7 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 			#define _AlphaClip 1
 			
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 			
 			#include "GlowPBR.hlsl"
 			

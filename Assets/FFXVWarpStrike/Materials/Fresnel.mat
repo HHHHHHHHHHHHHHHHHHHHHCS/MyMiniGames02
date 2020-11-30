@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJoints
-  m_Shader: {fileID: 4800000, guid: 7cc03a3191d21e04bb657d7b54236f5d, type: 3}
+  m_Name: Fresnel
+  m_Shader: {fileID: 4800000, guid: a79a727fee95d754da1c22368b8e1c31, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,10 +24,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ClearCoatMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -84,7 +80,6 @@ Material:
     - _AlphaThreshold: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _ClearCoat: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -97,7 +92,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _GlowPower: 1
-    - _Metallic: 0.349
+    - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -110,14 +105,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelAmount: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 0.929374, b: 1.866066, a: 1}
+    - _GlowColor: {r: 0, g: 0.23529412, b: 0.7490196, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1733428372934262155
+--- !u!114 &7885345682062952191
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
