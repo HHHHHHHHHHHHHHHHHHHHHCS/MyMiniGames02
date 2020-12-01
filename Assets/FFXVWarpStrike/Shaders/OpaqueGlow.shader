@@ -1,9 +1,9 @@
-//TODO:
 Shader "My/FFXVWarpStrike/OpaqueGlow"
 {
 	Properties
 	{
 		[HDR]_GlowColor ("GlowColor", Color) = (0, 0.929374, 1.866066, 1)
+		_BaseColor ("BaseColor", Color) = (0.5, 0.5, 0.5)
 		_GlowPower ("GlowPower", Float) = 1
 		_AlphaThreshold ("AlphaThreshold", Float) = 0
 		_FresnelAmount ("FresnelAmount", Vector) = (1, 1, 1, 1)
@@ -15,10 +15,10 @@ Shader "My/FFXVWarpStrike/OpaqueGlow"
 		
 		Pass
 		{
-			Tags { /* "LightMode" = "UniversalForwardOnly"*/ }
+			Name "UniversalForwardOnly"
+			Tags { "LightMode" = "UniversalForwardOnly" }
 			
-//TODO:
-			Blend One One
+			Blend One Zero
 			Cull Back
 			ZTest LEqual
 			ZWrite On
@@ -44,6 +44,7 @@ Shader "My/FFXVWarpStrike/OpaqueGlow"
 			#pragma multi_compile _ _MIXED_LIGHTING_SUBTRACTIVE
 			
 			#define _AlphaClip 1
+			#define _OpaqueMode 1
 			
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"

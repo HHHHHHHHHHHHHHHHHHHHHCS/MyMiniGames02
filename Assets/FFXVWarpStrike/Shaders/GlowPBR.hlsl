@@ -2,6 +2,9 @@
 	#define __GLOWPBR_INCLUDE__
 	
 	CBUFFER_START(UnityPerMaterial)
+	#ifdef _OpaqueMode
+		float4 _BaseColor;
+	#endif
 	float4 _GlowColor;
 	float _GlowPower;
 	float _AlphaThreshold;
@@ -17,7 +20,7 @@
 		float fre = pow(1.0 - saturate(dot(worldSpaceNormal, worldSpaceViewDirection)), _GlowPower);
 		float4 col = fre * _GlowColor * _FresnelAmount;
 		
-		#ifdef _BaseColor
+		#ifdef _OpaqueMode
 			albedo = _BaseColor.rgb;
 		#else
 			albedo = col.rgb;
@@ -28,7 +31,7 @@
 		metallic = 0;
 		smoothness = 0.5;
 		occlusion = 1;
-		#ifdef _BaseColor
+		#ifdef _OpaqueMode
 			alpha = 1;
 			alphaClipThreshold = 0;
 		#else

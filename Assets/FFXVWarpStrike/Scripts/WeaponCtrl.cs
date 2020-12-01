@@ -121,17 +121,23 @@ namespace FFXVWarpStrike
 
 			if (Input.GetMouseButtonDown(0))
 			{
+				isLocked = false;
+				LockInterface(false);
+				aim.color = Color.clear;
+				lockAim.DOFade(0, 0.15f);
+
+
 				moveInput.RotateTowards(target);
 				moveInput.canMove = false;
 				swordParticle.Play();
 				swordMesh.enabled = true;
 				anim.SetTrigger(Slash_ID);
-
-				if (Cursor.visible)
-				{
-					Cursor.visible = false;
-					Cursor.lockState = CursorLockMode.Locked;
-				}
+				
+				// if (Cursor.visible)
+				// {
+				// 	Cursor.visible = false;
+				// 	Cursor.lockState = CursorLockMode.Locked;
+				// }
 			}
 		}
 
@@ -262,9 +268,7 @@ namespace FFXVWarpStrike
 			StartCoroutine(PlayAnimation());
 			StartCoroutine(StopParticles());
 
-			isLocked = false;
-			LockInterface(false);
-			aim.color = Color.clear;
+
 
 			impulse.GenerateImpulse(Vector3.right);
 

@@ -14,7 +14,8 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 		
 		Pass
 		{
-			Tags { /* "LightMode" = "UniversalForwardOnly"*/ }
+			Name "UniversalForwardOnly"
+			Tags { "LightMode" = "UniversalForwardOnly" }
 			
 			Blend One One
 			Cull Back
