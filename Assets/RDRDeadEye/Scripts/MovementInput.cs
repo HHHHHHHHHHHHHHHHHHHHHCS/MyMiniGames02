@@ -5,6 +5,7 @@ namespace RDRDeadEye
 	[RequireComponent(typeof(CharacterController))]
 	public class MovementInput : MonoBehaviour
 	{
+		//TODO:DOING
 		public bool canMove;
 
 		public float velocity = 9;
