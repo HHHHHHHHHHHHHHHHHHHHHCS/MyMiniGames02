@@ -85,7 +85,7 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 				float3 worldSpacePosition = mul(UNITY_MATRIX_M, v.vertex).xyz;
 				float3 worldSpaceNormal = TransformObjectToWorldNormal(v.normal, true);
 				float3 worldSpaceTangent = normalize(mul((float3x3)UNITY_MATRIX_M, v.tangent.xyz));
-				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w;
+				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w * unity_WorldTransformParams.w;
 				float3 worldSpaceViewDirection = _WorldSpaceCameraPos.xyz - worldSpacePosition;
 				
 				o.uv = v.uv0;
@@ -216,7 +216,7 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 				float3 worldSpacePosition = mul(UNITY_MATRIX_M, v.vertex).xyz;
 				float3 worldSpaceNormal = TransformObjectToWorldNormal(v.normal, true);
 				float3 worldSpaceTangent = normalize(mul((float3x3)UNITY_MATRIX_M, v.tangent.xyz));
-				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w;
+				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w * unity_WorldTransformParams.w;
 				float3 worldSpaceViewDirection = _WorldSpaceCameraPos.xyz - worldSpacePosition;
 				
 				o.uv = v.uv0;
@@ -326,7 +326,7 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 				float3 worldSpacePosition = mul(UNITY_MATRIX_M, v.vertex).xyz;
 				float3 worldSpaceNormal = TransformObjectToWorldNormal(v.normal, true);
 				float3 worldSpaceTangent = normalize(mul((float3x3)UNITY_MATRIX_M, v.tangent.xyz));
-				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w;
+				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w * unity_WorldTransformParams.w;
 				float3 worldSpaceViewDirection = _WorldSpaceCameraPos.xyz - worldSpacePosition;
 				
 				o.uv = v.uv0;
@@ -427,7 +427,7 @@ Shader "My/FFXVWarpStrike/FresnelGlow"
 				float3 worldSpacePosition = mul(UNITY_MATRIX_M, v.vertex).xyz;
 				float3 worldSpaceNormal = TransformObjectToWorldNormal(v.normal, true);
 				float3 worldSpaceTangent = normalize(mul((float3x3)UNITY_MATRIX_M, v.tangent.xyz));
-				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w;
+				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w * unity_WorldTransformParams.w;
 				float3 worldSpaceViewDirection = _WorldSpaceCameraPos.xyz - worldSpacePosition;
 				
 				o.uv = v.uv0;
