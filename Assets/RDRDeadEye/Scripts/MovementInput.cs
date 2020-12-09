@@ -5,7 +5,6 @@ namespace RDRDeadEye
 	[RequireComponent(typeof(CharacterController))]
 	public class MovementInput : MonoBehaviour
 	{
-		//TODO:DOING
 		public bool canMove;
 
 		public float velocity = 9;
@@ -29,10 +28,6 @@ namespace RDRDeadEye
 
 		private void Update()
 		{
-			speed = 0;
-			if (!canMove)
-				return;
-
 			InputMagnitude();
 		}
 
@@ -53,7 +48,7 @@ namespace RDRDeadEye
 			// }
 		}
 
-		void PlayerMoveAndRotation(float inputX, float inputZ)
+		private void PlayerMoveAndRotation(float inputX, float inputZ)
 		{
 			var forward = cam.transform.forward;
 			var right = cam.transform.right;
@@ -74,10 +69,10 @@ namespace RDRDeadEye
 			}
 		}
 
-		public void RotateTowards(Transform t)
+		public void LookAt(Vector3 pos)
 		{
-			//like look at
-			transform.rotation = Quaternion.LookRotation(t.position - transform.position);
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(pos - transform.position),
+				desiredRotationSpeed);
 		}
 	}
 }

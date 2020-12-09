@@ -40,6 +40,8 @@ namespace PokemonCapture.Scripts
 
 		private void Update()
 		{
+			ReLoad();
+			
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				ThrowPokeBall();
@@ -53,8 +55,6 @@ namespace PokemonCapture.Scripts
 			{
 				Time.timeScale = 1f;
 			}
-
-			ReLoad();
 		}
 
 		private void ThrowPokeBall()
