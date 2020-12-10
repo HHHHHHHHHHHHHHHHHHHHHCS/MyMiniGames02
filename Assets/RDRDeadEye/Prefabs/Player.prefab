@@ -658,6 +658,9 @@ GameObject:
   m_Component:
   - component: {fileID: 874799207434187486}
   - component: {fileID: 874799207427251380}
+  - component: {fileID: 874799208117638919}
+  - component: {fileID: 3692956908424648424}
+  - component: {fileID: 874799208117638920}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -692,7 +695,7 @@ Animator:
   m_GameObject: {fileID: 874799207434678014}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2a2ef5b94cac0cf40adada4a3877a001, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a88769fdb0748d4abe4a4853bc663dc, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -701,6 +704,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!143 &874799208117638919
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874799207434678014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.9
+  m_Radius: 0.35
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3692956908424648424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874799207434678014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ae4c9afef701347b326436ebba043e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirdPersonCam: {fileID: 0}
+  postVolume: {fileID: 0}
+  deadEyeColor: {r: 0, g: 0, b: 0, a: 0}
+  aiming: 0
+  deadEye: 0
+  originalOffsetAmount: 0
+  zoomOffsetAmount: 0
+  aimTime: 0
+  targets: []
+  aimPrefab: {fileID: 0}
+  crossList: []
+  canvas: {fileID: 0}
+  reticle: {fileID: 0}
+  gun: {fileID: 0}
+  gunAimPos: {x: 0.3273799, y: -0.03389892, z: -0.08808608}
+  gunAimRot: {x: -1.763, y: -266.143, z: -263.152}
+--- !u!114 &874799208117638920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874799207434678014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76c7976ebaf4b246ab4ad64a216f00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 0
+  velocity: 6
+  desiredMoveDirection: {x: 0, y: 0, z: 0}
+  blockRotationPlayer: 0
+  desiredRotationSpeed: 0.2
+  allowPlayerRotation: 0.1
+  speed: 0
 --- !u!1 &874799207434678016
 GameObject:
   m_ObjectHideFlags: 0
