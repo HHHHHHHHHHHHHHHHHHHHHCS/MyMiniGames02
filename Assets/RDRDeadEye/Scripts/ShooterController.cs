@@ -13,6 +13,7 @@ namespace RDRDeadEye
 	public class ShooterController : MonoBehaviour
 	{
 		private static readonly int aiming_ID = Animator.StringToHash("aiming");
+		private static readonly int speed_ID = Animator.StringToHash("speed");
 
 		public static ShooterController instance { get; private set; }
 
@@ -30,28 +31,32 @@ namespace RDRDeadEye
 		private Vignette vignette;
 
 		public Color deadEyeColor;
-		private Color currentColor = Color.white;
+		private Color startColor = Color.white;
+		private Color endColor = Color.white;
 
 
-		[Space, Header("Booleans")] public bool aiming; //处于瞄准模式
-		public bool deadEye; //处于射击模式
+		[Space, Header("Booleans")] private bool aiming; //处于瞄准模式
+		private bool deadEye; //处于射击模式
 
 		[Space, Header("Settings")] private float originalZoom;
 		public float originalOffsetAmount;
 		public float zoomOffsetAmount;
 		public float aimTime;
-		[Header("Targets")] public List<Transform> targets = new List<Transform>();
+		private List<Transform> targets = new List<Transform>();
 
 		[Space, Header("UI")] public GameObject aimPrefab;
-		public List<Transform> crossList = new List<Transform>();
 		public Transform canvas;
 		public Image reticle;
+		private List<Transform> crossList = new List<Transform>();
 
 		[Space, Header("Gun")] public Transform gun;
 		public Vector3 gunAimPos = new Vector3(0.3273799f, -0.03389892f, -0.08808608f);
 		public Vector3 gunAimRot = new Vector3(-1.763f, -266.143f, -263.152f);
 		private Vector3 gunIdlePos;
 		private Vector3 gunIdleRot;
+
+		[Space, Header("Enemy")] public LayerMask enemyLayer;
+		public string enemyTag = "Enemy";
 
 		private void Awake()
 		{
@@ -80,24 +85,26 @@ namespace RDRDeadEye
 		{
 			ReLoad();
 
+			var mainCam = Camera.main;
+
 			if (aiming)
 			{
 				if (targets.Count > 0)
 				{
 					for (int i = 0; i < targets.Count; i++)
 					{
-						crossList[i].position = Camera.main.WorldToScreenPoint(targets[i].position);
+						crossList[i].position = mainCam.WorldToScreenPoint(targets[i].position);
 					}
 				}
 			}
 
-			//处于射击模式 不处理
+			//处于射击模式ing 不处理
 			if (deadEye)
 			{
 				return;
 			}
 
-			anim.SetFloat("speed", input.speed);
+			anim.SetFloat(speed_ID, input.speed);
 
 			if (!aiming)
 			{
@@ -107,6 +114,7 @@ namespace RDRDeadEye
 			if (Input.GetMouseButtonDown(1) && !deadEye)
 			{
 				Aim(true);
+				input.LookAt(mainCam.transform.forward + mainCam.transform.right * 0.1f);
 			}
 
 			if (Input.GetMouseButtonUp(1) && aiming)
@@ -131,12 +139,52 @@ namespace RDRDeadEye
 				s.AppendCallback(() => DeadEye(false));
 			}
 
+			//防止bug 复位用
 			if (Input.GetMouseButton(1) == false && aiming == true && deadEye == false)
 			{
 				Aim(false);
 			}
-			
-			//TODO:DOING
+
+			if (aiming && Input.GetMouseButtonDown(0))
+			{
+				RaycastHit hit;
+				Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, float.PositiveInfinity,
+					enemyLayer);
+
+				if (!deadEye)
+				{
+					reticle.color = Color.white;
+				}
+
+				if (hit.transform == null)
+				{
+					return;
+				}
+
+				if (!hit.collider.CompareTag(enemyTag))
+				{
+					return;
+				}
+
+				reticle.color = Color.red;
+
+				if (!targets.Contains(hit.transform))
+				{
+					return;
+				}
+
+				var enemy = hit.transform.GetComponentInParent<EnemyScript>();
+				if (!enemy.aimed)
+				{
+					enemy.aimed = true;
+					targets.Add(hit.transform);
+
+					Vector3 convertedPos = mainCam.WorldToScreenPoint(hit.transform.position);
+					GameObject cross = Instantiate(aimPrefab, canvas);
+					cross.transform.position = convertedPos;
+					crossList.Add(cross.transform);
+				}
+			}
 		}
 
 		private void ReLoad()
@@ -189,8 +237,10 @@ namespace RDRDeadEye
 
 			float origChromatic = state ? 0.0f : 0.4f;
 			float newChromatic = state ? 0.4f : 0.0f;
-			currentColor = state ? deadEyeColor : Color.white;
+			startColor = state ? Color.white : deadEyeColor;
+			endColor = state ? deadEyeColor : Color.white;
 
+			DOVirtual.Float(0, 1, 0.1f, ColorAdjustments);
 			DOVirtual.Float(origChromatic, newChromatic, 0.1f, AberrationAmount);
 			DOVirtual.Float(origChromatic, newChromatic, 0.1f, VignetteAmount);
 
@@ -255,12 +305,17 @@ namespace RDRDeadEye
 			Time.timeScale = x;
 		}
 
-		void AberrationAmount(float x)
+		private void ColorAdjustments(float x)
+		{
+			colorAdjustments.colorFilter.value = Color.Lerp(startColor, endColor, x);
+		}
+
+		private void AberrationAmount(float x)
 		{
 			chromaticAberration.intensity.value = x;
 		}
 
-		void VignetteAmount(float x)
+		private void VignetteAmount(float x)
 		{
 			vignette.intensity.value = x;
 		}

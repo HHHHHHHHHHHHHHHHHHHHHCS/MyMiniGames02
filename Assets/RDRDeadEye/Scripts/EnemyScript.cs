@@ -5,7 +5,7 @@ namespace RDRDeadEye
 {
 	public class EnemyScript : MonoBehaviour
 	{
-		public bool aimed;
+		[HideInInspector] public bool aimed;
 
 		private Rigidbody[] rigis;
 		private Animator anim;
@@ -22,7 +22,7 @@ namespace RDRDeadEye
 		public void Ragdoll(bool state, Transform point)
 		{
 			anim.enabled = !state;
-			
+
 			foreach (var rigi in rigis)
 			{
 				rigi.isKinematic = !state;
