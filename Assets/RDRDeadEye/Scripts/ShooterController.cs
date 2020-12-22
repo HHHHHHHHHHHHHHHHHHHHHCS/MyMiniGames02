@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using DG.Tweening;
 using UnityEngine;
@@ -42,7 +43,7 @@ namespace RDRDeadEye
 		public float originalOffsetAmount;
 		public float zoomOffsetAmount;
 		public float aimTime;
-		private List<Transform> targets = new List<Transform>();
+		private List<EnemyScript> targets = new List<EnemyScript>();
 
 		[Space, Header("UI")] public GameObject aimPrefab;
 		public Transform canvas;
@@ -87,13 +88,15 @@ namespace RDRDeadEye
 
 			var mainCam = Camera.main;
 
+			input.canMove = !(aiming || deadEye);
+
 			if (aiming)
 			{
 				if (targets.Count > 0)
 				{
 					for (int i = 0; i < targets.Count; i++)
 					{
-						crossList[i].position = mainCam.WorldToScreenPoint(targets[i].position);
+						crossList[i].position = mainCam.WorldToScreenPoint(targets[i].aimingPoint.transform.position);
 					}
 				}
 			}
@@ -109,6 +112,10 @@ namespace RDRDeadEye
 			if (!aiming)
 			{
 				WeaponPosition();
+			}
+			else
+			{
+				input.LookAt(mainCam.transform.forward + (mainCam.transform.right * .1f));
 			}
 
 			if (Input.GetMouseButtonDown(1) && !deadEye)
@@ -130,7 +137,7 @@ namespace RDRDeadEye
 					int x = i; //循环缓存栈堆 暂存
 					s.AppendInterval(0.05f);
 					s.AppendCallback(FirePolish);
-					s.AppendCallback(() => enemy.Ragdoll(true, targets[x]));
+					s.AppendCallback(() => enemy.Ragdoll(true));
 					s.AppendCallback(() => crossList[x].GetComponent<Image>().color = Color.clear);
 					s.AppendInterval(0.35f);
 				}
@@ -145,6 +152,10 @@ namespace RDRDeadEye
 				Aim(false);
 			}
 
+			//TODO:移动中地方单位是红色 否则是白色
+			//TODO:枪的火焰
+			//TODO:朝向的跟随
+			
 			if (aiming && Input.GetMouseButtonDown(0))
 			{
 				RaycastHit hit;
@@ -168,18 +179,20 @@ namespace RDRDeadEye
 
 				reticle.color = Color.red;
 
-				if (!targets.Contains(hit.transform))
+				var enemy = hit.transform.GetComponentInParent<EnemyScript>();
+
+				if (targets.Contains(enemy))
 				{
 					return;
 				}
 
-				var enemy = hit.transform.GetComponentInParent<EnemyScript>();
 				if (!enemy.aimed)
 				{
 					enemy.aimed = true;
-					targets.Add(hit.transform);
+					enemy.CreateAimingPoint(hit.transform,hit.point);
+					targets.Add(enemy);
 
-					Vector3 convertedPos = mainCam.WorldToScreenPoint(hit.transform.position);
+					Vector3 convertedPos = mainCam.WorldToScreenPoint(hit.point);
 					GameObject cross = Instantiate(aimPrefab, canvas);
 					cross.transform.position = convertedPos;
 					crossList.Add(cross.transform);

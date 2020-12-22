@@ -659,8 +659,8 @@ GameObject:
   - component: {fileID: 874799207434187486}
   - component: {fileID: 874799207427251380}
   - component: {fileID: 874799208117638919}
-  - component: {fileID: 3692956908424648424}
   - component: {fileID: 874799208117638920}
+  - component: {fileID: 3692956908424648424}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -722,34 +722,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &3692956908424648424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874799207434678014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ae4c9afef701347b326436ebba043e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thirdPersonCam: {fileID: 0}
-  postVolume: {fileID: 0}
-  deadEyeColor: {r: 0, g: 0, b: 0, a: 0}
-  aiming: 0
-  deadEye: 0
-  originalOffsetAmount: 0
-  zoomOffsetAmount: 0
-  aimTime: 0
-  targets: []
-  aimPrefab: {fileID: 0}
-  crossList: []
-  canvas: {fileID: 0}
-  reticle: {fileID: 0}
-  gun: {fileID: 0}
-  gunAimPos: {x: 0.3273799, y: -0.03389892, z: -0.08808608}
-  gunAimRot: {x: -1.763, y: -266.143, z: -263.152}
 --- !u!114 &874799208117638920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +741,34 @@ MonoBehaviour:
   desiredRotationSpeed: 0.2
   allowPlayerRotation: 0.1
   speed: 0
+--- !u!114 &3692956908424648424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874799207434678014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ae4c9afef701347b326436ebba043e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirdPersonCam: {fileID: 0}
+  postVolume: {fileID: 0}
+  deadEyeColor: {r: 1, g: 0.7607843, b: 0, a: 1}
+  originalOffsetAmount: 0.2
+  zoomOffsetAmount: 0.45
+  aimTime: 0.2
+  aimPrefab: {fileID: 8266601457581385154, guid: adce75169a56784448b6d7f4fbe7c030, type: 3}
+  canvas: {fileID: 0}
+  reticle: {fileID: 0}
+  gun: {fileID: 874799207321706828}
+  gunAimPos: {x: 0.3273799, y: -0.03389892, z: -0.08808608}
+  gunAimRot: {x: -1.763, y: -266.143, z: -263.152}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  enemyTag: Enemy
 --- !u!1 &874799207434678016
 GameObject:
   m_ObjectHideFlags: 0

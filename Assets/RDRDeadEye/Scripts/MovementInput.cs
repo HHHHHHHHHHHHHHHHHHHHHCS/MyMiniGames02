@@ -5,7 +5,7 @@ namespace RDRDeadEye
 	[RequireComponent(typeof(CharacterController))]
 	public class MovementInput : MonoBehaviour
 	{
-		public bool canMove;
+		public bool canMove = true;
 
 		public float velocity = 9;
 		[Space] public Vector3 desiredMoveDirection;
@@ -33,6 +33,11 @@ namespace RDRDeadEye
 
 		private void InputMagnitude()
 		{
+			if (canMove == false)
+			{
+				return;
+			}
+			
 			float inputX = Input.GetAxis("Horizontal");
 			float inputZ = Input.GetAxis("Vertical");
 
