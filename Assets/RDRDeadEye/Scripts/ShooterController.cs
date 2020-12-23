@@ -132,6 +132,7 @@ namespace RDRDeadEye
 				for (int i = 0; i < targets.Count; i++)
 				{
 					EnemyScript enemy = targets[i].GetComponentInParent<EnemyScript>();
+					s.AppendCallback(() => thirdPersonCam.LookAt = enemy.transform);
 					s.Append(transform.DOLookAt(enemy.transform.position, 0.5f).SetUpdate(true));
 					s.AppendCallback(() => anim.SetTrigger("fire"));
 					int x = i; //循环缓存栈堆 暂存
@@ -142,6 +143,7 @@ namespace RDRDeadEye
 					s.AppendInterval(0.35f);
 				}
 
+				s.AppendCallback(() => thirdPersonCam.LookAt = transform);
 				s.AppendCallback(() => Aim(false));
 				s.AppendCallback(() => DeadEye(false));
 			}
@@ -152,11 +154,7 @@ namespace RDRDeadEye
 				Aim(false);
 			}
 
-			//TODO:移动中地方单位是红色 否则是白色
-			//TODO:枪的火焰
-			//TODO:朝向的跟随
-			
-			if (aiming && Input.GetMouseButtonDown(0))
+			if (aiming)
 			{
 				RaycastHit hit;
 				Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, float.PositiveInfinity,
@@ -179,6 +177,11 @@ namespace RDRDeadEye
 
 				reticle.color = Color.red;
 
+				if (!Input.GetMouseButtonDown(0))
+				{
+					return;
+				}
+
 				var enemy = hit.transform.GetComponentInParent<EnemyScript>();
 
 				if (targets.Contains(enemy))
@@ -186,10 +189,11 @@ namespace RDRDeadEye
 					return;
 				}
 
+
 				if (!enemy.aimed)
 				{
 					enemy.aimed = true;
-					enemy.CreateAimingPoint(hit.transform,hit.point);
+					enemy.CreateAimingPoint(hit.transform, hit.point);
 					targets.Add(enemy);
 
 					Vector3 convertedPos = mainCam.WorldToScreenPoint(hit.point);
