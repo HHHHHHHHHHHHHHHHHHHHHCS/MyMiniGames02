@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Portal_Tornado
+  m_Shader: {fileID: -6465566751694194690, guid: 194f7443e823d404cb369db8d0e83571, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2450
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_d80a4cdf30b34d6f915fb6c05e8d0d5b:
+        m_Texture: {fileID: 2800000, guid: 8a90ba11451c355478c5419bb752234a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_b95c6ed955ea451b8712cfd7b3f86cca: 1.04
+    - _Amount: 0.149
+    m_Colors:
+    - Color_29e9f98684d34049bbf95fa75c1231b0: {r: 0, g: 0.44889978, b: 1.1431981, a: 0}
+    - Color_69c762e7a5974e70a695fab308884cdc: {r: 1.8443027, g: 1.8443027, b: 1.8443027, a: 0}
+  m_BuildTextureStacks: []

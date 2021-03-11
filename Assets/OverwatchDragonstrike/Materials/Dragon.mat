@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dragon
+  m_Shader: {fileID: -6465566751694194690, guid: 9a4b990593c2a2549a58dd97bf8a0cc8, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2450
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_65c2b12fadfe4defa6c403fe948753b6: 0.78
+    - Vector1_6601f9c67a42403899e38ecc2764208e: 3
+    - Vector1_9e1dc1604bcc4ea6aff9ee48c1f725a7: 0.06
+    - Vector1_b90cf6e635964edcbfdd1e04f26086ba: 6
+    - _SplitValue: -35.54
+    - _TimeOffset: 6
+    m_Colors:
+    - Color_0a075f1f67874cd690a3b8b7fd78d003: {r: 1, g: 1, b: 1, a: 0}
+    - Color_3728516c044946b7a430ea6291748aaa: {r: 0, g: 0, b: 0, a: 0}
+    - Color_e821960cd9a74e83932b762437edfb07: {r: 1.153143, g: 2.4344132, b: 6.1180644, a: 1}
+    - Color_e9d26c3891224e1b94fd59765a89f944: {r: 0, g: 0.48047626, b: 1.5295161, a: 0}
+  m_BuildTextureStacks: []

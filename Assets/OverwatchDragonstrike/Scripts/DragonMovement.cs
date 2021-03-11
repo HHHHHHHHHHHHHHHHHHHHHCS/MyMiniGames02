@@ -39,16 +39,19 @@ namespace OverwatchDragonstrike.Scripts
 				foreach (var mat in materials)
 				{
 					mat.SetFloat(SplitValue_ID, splitValue);
-					// mat.DOFloat(initialDissolveValue, SplitValue_ID, 1).SetDelay(destroyTime)
-					// 	.OnComplete(() => Destroy(gameObject));
-					Destroy(gameObject, destroyTime);
+					mat.DOFloat(initialDissolveValue, SplitValue_ID, 1)
+						.SetDelay(destroyTime).SetUpdate(UpdateType.Late); //.OnComplete(() => Destroy(gameObject));
 				}
 			}
+
+			Destroy(gameObject, destroyTime + 1);
 		}
 
 		private void Update()
 		{
 			transform.localPosition += transform.forward * Time.deltaTime * speed;
+
+			splitValue += dissolveSpeed * Time.deltaTime * speed;
 
 			foreach (var item in renderers)
 			{
@@ -56,8 +59,6 @@ namespace OverwatchDragonstrike.Scripts
 
 				foreach (var mat in materials)
 				{
-					splitValue += dissolveSpeed * Time.deltaTime * speed;
-
 					//其实可以传入一个起始时间  然后Shader中 _Time.x - startTime
 					mat.SetFloat(SplitValue_ID, splitValue);
 				}

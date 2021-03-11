@@ -99,6 +99,7 @@ namespace OverwatchDragonstrike.Scripts
 
 			//Extras
 			arrow.GetComponent<TrailRenderer>().emitting = false; //拖尾轨迹
+			arrowRigi.isKinematic = true;
 			arrowRender.enabled = false;
 			arrow.parent = transform.GetChild(0);
 			arrow.transform.localPosition = arrowLocalPos;
