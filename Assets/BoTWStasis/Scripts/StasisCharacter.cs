@@ -9,6 +9,8 @@ namespace BoTWStasis.Scripts
 {
 	public class StasisCharacter : MonoBehaviour
 	{
+		public static StasisCharacter instance;
+		
 		private static readonly int EmissionColor_ID = Shader.PropertyToID("_EmissionColor");
 		private static readonly int StasisAmount_ID = Shader.PropertyToID("_StasisAmount");
 
@@ -36,6 +38,12 @@ namespace BoTWStasis.Scripts
 		public Color finalColor;
 		private static readonly int Attacking_ID = Animator.StringToHash("attacking");
 
+		public Transform arrow;
+		
+		private void Awake()
+		{
+			instance = this;
+		}
 
 		private void Start()
 		{
@@ -80,7 +88,7 @@ namespace BoTWStasis.Scripts
 						{
 							if (!so.activated)
 							{
-								so.material.SetColor(EmissionColor_ID, highlightedColor);
+								so.renderer.material.SetColor(EmissionColor_ID, highlightedColor);
 							}
 
 							InterfaceAnimation.instance.Target(true);
@@ -115,7 +123,7 @@ namespace BoTWStasis.Scripts
 				if (!stasisAim)
 				{
 					anim.SetTrigger(Slash_ID);
-					StartCoroutine(WaitForEndOfFrame())
+					StartCoroutine(WaitForEndOfFrame());
 				}
 				else
 				{
@@ -126,7 +134,7 @@ namespace BoTWStasis.Scripts
 						{
 							bool stasis = so.activated;
 							so.SetStasis(!stasis);
-							StasisAnim(false);
+							StasisAim(false);
 						}
 					}
 				}
@@ -144,7 +152,7 @@ namespace BoTWStasis.Scripts
 			}
 		}
 
-		private void StasisAnim(bool state)
+		private void StasisAim(bool state)
 		{
 			stasisAim = state;
 			float fov = state ? zoomFOV : originalFOV;
@@ -161,8 +169,9 @@ namespace BoTWStasis.Scripts
 			{
 				if (!item.activated)
 				{
-					item.GetComponent<Renderer>().material.SetColor(EmissionColor_ID, normalColor);
-					item.GetComponent<Renderer>().material.SetFloat(StasisAmount_ID, stasisEffect);
+					var mat = item.GetComponent<Renderer>().material;
+					mat.SetColor(EmissionColor_ID, normalColor);
+					mat.SetFloat(StasisAmount_ID, stasisEffect);
 				}
 			}
 
