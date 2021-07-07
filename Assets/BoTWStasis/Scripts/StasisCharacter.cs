@@ -9,7 +9,7 @@ namespace BoTWStasis.Scripts
 {
 	public class StasisCharacter : MonoBehaviour
 	{
-		public static StasisCharacter instance;
+		private static readonly int Attacking_ID = Animator.StringToHash("attacking");
 		
 		private static readonly int EmissionColor_ID = Shader.PropertyToID("_EmissionColor");
 		private static readonly int StasisAmount_ID = Shader.PropertyToID("_StasisAmount");
@@ -18,6 +18,8 @@ namespace BoTWStasis.Scripts
 
 		private static WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
 
+		public static StasisCharacter instance;
+		
 		[Header("Collision")] public LayerMask layerMask;
 
 		private MovementInput input;
@@ -36,7 +38,6 @@ namespace BoTWStasis.Scripts
 		[Space] [Header("Colors")] public Color highlightedColor;
 		public Color normalColor;
 		public Color finalColor;
-		private static readonly int Attacking_ID = Animator.StringToHash("attacking");
 
 		public Transform arrow;
 		
@@ -91,11 +92,11 @@ namespace BoTWStasis.Scripts
 								so.renderer.material.SetColor(EmissionColor_ID, highlightedColor);
 							}
 
-							InterfaceAnimation.instance.Target(true);
+							AimUIAnimation.instance.Target(true);
 						}
 						else
 						{
-							InterfaceAnimation.instance.Target(false);
+							AimUIAnimation.instance.Target(false);
 						}
 					}
 				}
@@ -113,7 +114,7 @@ namespace BoTWStasis.Scripts
 						}
 
 						target = null;
-						InterfaceAnimation.instance.Target(false);
+						AimUIAnimation.instance.Target(false);
 					}
 				}
 			}
@@ -123,7 +124,7 @@ namespace BoTWStasis.Scripts
 				if (!stasisAim)
 				{
 					anim.SetTrigger(Slash_ID);
-					StartCoroutine(WaitForEndOfFrame());
+					StartCoroutine(WaitFrame());
 				}
 				else
 				{
@@ -175,7 +176,7 @@ namespace BoTWStasis.Scripts
 				}
 			}
 
-			InterfaceAnimation.instance.Show(state);
+			AimUIAnimation.instance.Show(state);
 		}
 
 
