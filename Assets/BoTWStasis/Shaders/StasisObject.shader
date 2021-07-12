@@ -16,8 +16,8 @@ Shader "My/BoTWStasis/StasisObject"
 	#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 	#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceData.hlsl"
 	CBUFFER_START(UnityPerMaterial)
-	float4 _EmissionColor;
-	float4 _BorderColor;
+	half4 _EmissionColor;
+	half4 _BorderColor;
 	float _StasisAmount;
 	float _NoiseAmount;
 	float _NoiseSpeed;
@@ -30,9 +30,112 @@ Shader "My/BoTWStasis/StasisObject"
 	TEXTURE2D(_NormalMap);
 	SAMPLER(sampler_NormalMap);
 
-	SurfaceData CalcSurfaceData()
+	inline float Unity_SawtoothWave_float(float In)
+	{
+		return 2 * (In - floor(0.5 + In));
+	}
+
+	inline float Unity_SimpleNoise_RandomValue_float(float2 uv)
+	{
+		return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453);
+	}
+
+	inline float Unity_SimpleNnoise_Interpolate_float(float a, float b, float t)
+	{
+		return (1.0 - t) * a + (t * b);
+	}
+
+
+	inline float Unity_SimpleNoise_ValueNoise_float(float2 uv)
+	{
+		float2 i = floor(uv);
+		float2 f = frac(uv);
+		f = f * f * (3.0 - 2.0 * f);
+
+		// uv = abs(frac(uv) - 0.5);
+		float2 c0 = i + float2(0.0, 0.0);
+		float2 c1 = i + float2(1.0, 0.0);
+		float2 c2 = i + float2(0.0, 1.0);
+		float2 c3 = i + float2(1.0, 1.0);
+		float r0 = Unity_SimpleNoise_RandomValue_float(c0);
+		float r1 = Unity_SimpleNoise_RandomValue_float(c1);
+		float r2 = Unity_SimpleNoise_RandomValue_float(c2);
+		float r3 = Unity_SimpleNoise_RandomValue_float(c3);
+
+		float bottomOfGrid = Unity_SimpleNnoise_Interpolate_float(r0, r1, f.x);
+		float topOfGrid = Unity_SimpleNnoise_Interpolate_float(r2, r3, f.x);
+		float t = Unity_SimpleNnoise_Interpolate_float(bottomOfGrid, topOfGrid, f.y);
+		return t;
+	}
+
+	float Unity_SimpleNoise_float(float2 UV, float Scale)
+	{
+		float t = 0.0;
+
+		float freq = pow(2.0, float(0));
+		float amp = pow(0.5, float(3 - 0));
+		t += Unity_SimpleNoise_ValueNoise_float(float2(UV.x * Scale / freq, UV.y * Scale / freq)) * amp;
+
+		freq = pow(2.0, float(1));
+		amp = pow(0.5, float(3 - 1));
+		t += Unity_SimpleNoise_ValueNoise_float(float2(UV.x * Scale / freq, UV.y * Scale / freq)) * amp;
+
+		freq = pow(2.0, float(2));
+		amp = pow(0.5, float(3 - 2));
+		t += Unity_SimpleNoise_ValueNoise_float(float2(UV.x * Scale / freq, UV.y * Scale / freq)) * amp;
+
+		return t;
+	}
+
+	float Unity_FresnelEffect_float(float3 Normal, float3 viewDir, float Power)
+	{
+		return pow((1.0 - saturate(dot(normalize(Normal), normalize(viewDir)))), Power);
+	}
+
+	float Unity_FresnelEffect_NoNormalize_float(float3 Normal, float3 viewDir, float Power)
+	{
+		return pow((1.0 - saturate(dot((Normal), (viewDir)))), Power);
+	}
+
+	SurfaceData CalcSurfaceData(float2 uv, float3 wNormal, float3 wView)
 	{
 		SurfaceData o = (SurfaceData)0;
+
+		//albedo-------------
+		half4 albedo = SAMPLE_TEXTURE2D(_AlbedoTexture, sampler_AlbedoTexture, uv);
+
+		//normal-------------
+		float4 normal = SAMPLE_TEXTURE2D(_NormalMap, sampler_NormalMap, uv);
+		real3 normalTS = UnpackNormal(normal);
+
+		//noise effect--------------------
+		float wave = Unity_SawtoothWave_float(_Time.y * _NoiseSpeed);
+		float noise = Unity_SimpleNoise_float(uv, _NoiseScale);
+		float n_a = wave - _NoiseWidth;
+		float n_b = step(n_a, noise);
+		float n_c = step(wave, noise);
+		float n_d = n_b - n_c;
+
+		//fresnel--------------
+		float f_a = Unity_FresnelEffect_NoNormalize_float(wNormal, wView, 1);
+		float f_b = Unity_FresnelEffect_NoNormalize_float(wNormal, wView, 7.77);
+		half4 borderColor = f_b * _BorderColor;
+		borderColor += _EmissionColor * f_a + _EmissionColor;
+		borderColor *= _StasisAmount;
+		half4 b_c = _EmissionColor * 3.32;
+		b_c = lerp(1, b_c, 0.7);
+		b_c *= n_d * _NoiseAmount;
+		borderColor += b_c;
+
+		o.albedo = albedo.rgb;
+		o.normalTS = normalTS;
+		o.emission = borderColor.rgb;
+		o.metallic = 0.5;
+		o.smoothness = 0;
+		o.occlusion = 0.5;
+		o.alpha = 1;
+		o.clearCoatMask = 0.0;
+		o.clearCoatSmoothness = 1.0;
 		return o;
 	}
 	ENDHLSL
@@ -75,7 +178,8 @@ Shader "My/BoTWStasis/StasisObject"
 			#pragma multi_compile _ _SHADOWS_SOFT
 			#pragma multi_compile _ _MIXED_LIGHTING_SUBTRACTIVE
 
-			#pragma shader_feature _NORMALMAP
+			#pragma multi_compile _NORMALMAP
+			#pragma multi_compile _NORMAL_DROPOFF_TS
 
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
@@ -107,6 +211,40 @@ Shader "My/BoTWStasis/StasisObject"
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
+			void BuildInputData(v2f input, SurfaceData surfaceData, out InputData inputData)
+			{
+				inputData.positionWS = input.wPos;
+
+				#ifdef _NORMALMAP
+				#if _NORMAL_DROPOFF_TS
+				// IMPORTANT! If we ever support Flip on double sided materials ensure bitangent and tangent are NOT flipped.
+				half3x3 tangentSpaceTransform = half3x3(input.wTangent, input.wBiTangent, input.wNormal);
+				inputData.normalWS = TransformTangentToWorld(surfaceData.normalTS, tangentSpaceTransform);
+				#elif _NORMAL_DROPOFF_OS
+			            inputData.normalWS = TransformObjectToWorldNormal(surfaceData.normalTS);
+				#elif _NORMAL_DROPOFF_WS
+			            inputData.normalWS = surfaceData.normalTS;
+				#endif
+				#else
+			        inputData.normalWS = input.wNormal;
+				#endif
+				inputData.normalWS = NormalizeNormalPerPixel(inputData.normalWS);
+				inputData.viewDirectionWS = input.wSpaceViewDirection;
+
+				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
+			        inputData.shadowCoord = input.shadowCoord;
+				#elif defined(MAIN_LIGHT_CALCULATE_SHADOWS)
+			        inputData.shadowCoord = TransformWorldToShadowCoord(inputData.positionWS);
+				#else
+				inputData.shadowCoord = float4(0, 0, 0, 0);
+				#endif
+
+				inputData.fogCoord = input.fogFactorAndVertexLight.x;
+				inputData.vertexLighting = input.fogFactorAndVertexLight.yzw;
+				inputData.bakedGI = SAMPLE_GI(input.lightmapUV, input.vertexSH, inputData.normalWS);
+				inputData.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(input.clipPos);
+				inputData.shadowMask = SAMPLE_SHADOWMASK(input.lightmapUV);
+			}
 
 			v2f vert(a2v v)
 			{
@@ -118,8 +256,8 @@ Shader "My/BoTWStasis/StasisObject"
 				float3 worldSpaceNormal = TransformObjectToWorldNormal(v.normal, true);
 				float3 worldSpaceTangent = normalize(mul((float3x3)UNITY_MATRIX_M, v.tangent.xyz));
 				float3 worldSpaceBiTangent = cross(worldSpaceNormal, worldSpaceTangent) * v.tangent.w *
-					unity_WorldTransformParams.w;
-				float3 worldSpaceViewDirection = _WorldSpaceCameraPos.xyz - worldSpacePosition;
+					GetOddNegativeScale();
+				float3 worldSpaceViewDirection = GetWorldSpaceViewDir(worldSpacePosition);
 
 				o.uv = v.uv0;
 				o.wPos = worldSpacePosition;
@@ -144,35 +282,21 @@ Shader "My/BoTWStasis/StasisObject"
 				return o;
 			}
 
-			float4 frag(v2f i): SV_Target
+			float4 frag(v2f IN): SV_Target
 			{
-				i.wTangent = normalize(i.wTangent);
-				i.wBiTangent = normalize(i.wBiTangent);
-				i.wNormal = normalize(i.wNormal);
-				i.wSpaceViewDirection = SafeNormalize(i.wSpaceViewDirection);
+				IN.wTangent = normalize(IN.wTangent);
+				IN.wBiTangent = normalize(IN.wBiTangent);
+				IN.wNormal = normalize(IN.wNormal);
+				IN.wSpaceViewDirection = SafeNormalize(IN.wSpaceViewDirection);
 
-				float3x3 tangentSpaceTransform = float3x3(i.wTangent, i.wBiTangent, i.wNormal);
-				float3 tangentSpaceNormal = mul(i.wNormal, (float3x3)tangentSpaceTransform).xyz;
-
-				SurfaceData surfaceData = CalcSurfaceData();
+				SurfaceData surfaceData = CalcSurfaceData(IN.uv, IN.wNormal, IN.wSpaceViewDirection);
 
 				InputData inputData = (InputData)0;
-				inputData.positionWS = i.wPos;
-				inputData.normalWS = i.wNormal;
-				inputData.viewDirectionWS = i.wSpaceViewDirection;
-				#if defined(MAIN_LIGHT_CALCULATE_SHADOWS)
-				inputData.shadowCoord = TransformWorldToShadowCoord(inputData.positionWS);
-				#else
-				inputData.shadowCoord = float4(0, 0, 0, 0);
-				#endif
-				// inputData.shadowCoord = i.shadowCoord;
-				inputData.fogCoord = i.fogFactorAndVertexLight.x;
-				inputData.vertexLighting = i.fogFactorAndVertexLight.yzw;
-				inputData.bakedGI = SAMPLE_GI(i.lightmapUV, i.vertexSH, inputData.normalWS);
+				BuildInputData(IN, surfaceData, inputData);
 
 				half4 color = UniversalFragmentPBR(inputData, surfaceData);
 
-				color.rgb = MixFog(color.rgb, i.fogFactorAndVertexLight.x);
+				color.rgb = MixFog(color.rgb, IN.fogFactorAndVertexLight.x);
 
 				return color;
 			}
@@ -377,20 +501,28 @@ Shader "My/BoTWStasis/StasisObject"
 			{
 				float4 positionCS : SV_POSITION;
 				float2 uv : TEXCOORD0;
+				float3 wNormal : TEXCOORD1;
+				float3 wSpaceViewDirection : TEXCOORD2;
 			};
 
 			Varyings UniversalVertexMeta(Attributes input)
 			{
 				Varyings output;
+				//因为是meta 所以 objectSpace 跟 worldSpace 没有什么区别
 				output.positionCS = MetaVertexPosition(input.positionOS, input.uv1, input.uv2, unity_LightmapST,
 				                                       unity_DynamicLightmapST);
 				output.uv = input.uv0;
+				output.wNormal = TransformObjectToWorldNormal(input.normalOS);
+				output.wSpaceViewDirection = GetWorldSpaceViewDir(input.positionOS.xyz);
 				return output;
 			}
 
-			half4 UniversalFragmentMeta(Varyings input) : SV_Target
+			half4 UniversalFragmentMeta(Varyings IN) : SV_Target
 			{
-				SurfaceData surfaceData = CalcSurfaceData();
+				IN.wNormal = normalize(IN.wNormal);
+				IN.wSpaceViewDirection = SafeNormalize(IN.wSpaceViewDirection);
+
+				SurfaceData surfaceData = CalcSurfaceData(IN.uv, IN.wNormal, IN.wSpaceViewDirection);
 
 				BRDFData brdfData;
 				InitializeBRDFData(surfaceData.albedo, surfaceData.metallic, surfaceData.specular,
