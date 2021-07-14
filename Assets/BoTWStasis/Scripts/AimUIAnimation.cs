@@ -9,18 +9,21 @@ namespace BoTWStasis.Scripts
 	{
 		public static AimUIAnimation instance;
 
-		public CanvasGroup canvasGroup;
-		public RectTransform animationSquare;
-		public Sprite noTargetSprite;
-		public Sprite targetSprite;
+		[SerializeField] private RectTransform animationSquare;
+		[SerializeField] private Sprite noTargetSprite;
+		[SerializeField] private Sprite targetSprite;
+
+		private CanvasGroup canvasGroup;
+
 
 		private void Awake()
 		{
 			instance = this;
+			canvasGroup = GetComponent<CanvasGroup>();
 			canvasGroup.alpha = 0;
 			//LoopType.Yoyo == pingpong
-			animationSquare.DOSizeDelta(animationSquare.sizeDelta / 1.4f, 0.4f).SetLoops(-1, LoopType.Yoyo)
-				.SetEase(Ease.InOutSine);
+			animationSquare.DOSizeDelta(animationSquare.sizeDelta / 1.4f, 0.4f)
+				.SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
 		}
 
 		public void Show(bool state)

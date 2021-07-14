@@ -10,7 +10,7 @@ namespace BoTWStasis.Scripts
 	public class StasisCharacter : MonoBehaviour
 	{
 		private static readonly int Attacking_ID = Animator.StringToHash("attacking");
-		
+
 		private static readonly int EmissionColor_ID = Shader.PropertyToID("_EmissionColor");
 		private static readonly int StasisAmount_ID = Shader.PropertyToID("_StasisAmount");
 
@@ -19,7 +19,7 @@ namespace BoTWStasis.Scripts
 		private static WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
 
 		public static StasisCharacter instance;
-		
+
 		[Header("Collision")] public LayerMask layerMask;
 
 		private MovementInput input;
@@ -39,8 +39,8 @@ namespace BoTWStasis.Scripts
 		public Color normalColor;
 		public Color finalColor;
 
-		public Transform arrow;
-		
+		[Space] [Header("Arrow")] public GameObject arrow;
+
 		private void Awake()
 		{
 			instance = this;
@@ -78,24 +78,29 @@ namespace BoTWStasis.Scripts
 				{
 					if (target != hit.transform)
 					{
-						if (target != null && target.GetComponent<StasisObject>() != null)
+						if (target != null)
 						{
-							target.GetComponent<Renderer>().material.SetColor(EmissionColor_ID, normalColor);
+							var oldSO = target.GetComponent<StasisObject>();
+							if (oldSO != null)
+							{
+								oldSO.SetEmissionColor(normalColor);
+							}
 						}
 
-						target = hit.transform;
-						var so = target.GetComponent<StasisObject>();
+						var so = hit.transform.GetComponent<StasisObject>();
 						if (so != null)
 						{
+							target = hit.transform;
 							if (!so.activated)
 							{
-								so.renderer.material.SetColor(EmissionColor_ID, highlightedColor);
+								so.SetEmissionColor(highlightedColor);
 							}
 
 							AimUIAnimation.instance.Target(true);
 						}
 						else
 						{
+							target = null;
 							AimUIAnimation.instance.Target(false);
 						}
 					}
@@ -109,7 +114,7 @@ namespace BoTWStasis.Scripts
 						{
 							if (!so.activated)
 							{
-								target.GetComponent<Renderer>().material.SetColor(EmissionColor_ID, normalColor);
+								so.SetEmissionColor( normalColor);
 							}
 						}
 

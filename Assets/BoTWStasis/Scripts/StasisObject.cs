@@ -27,7 +27,7 @@ namespace BoTWStasis.Scripts
 		private Color finalColor;
 
 		private Transform arrow;
-		public Renderer renderer;
+		private Renderer renderer;
 
 		[Header("Particles")] public Transform startparticleGroup;
 		public Transform endParticleGroup;
@@ -40,6 +40,11 @@ namespace BoTWStasis.Scripts
 			finalColor = StasisCharacter.instance.finalColor;
 			particleColor = normalColor;
 			renderer = GetComponent<Renderer>();
+		}
+
+		public void SetEmissionColor(Color highlightedColor)
+		{
+			renderer.material.SetColor(EmissionColor_ID, highlightedColor);
 		}
 
 		public void SetStasis(bool state)
@@ -104,7 +109,7 @@ namespace BoTWStasis.Scripts
 
 			if (arrow == null)
 			{
-				arrow = Instantiate(StasisCharacter.instance.arrow);
+				arrow = Instantiate(StasisCharacter.instance.arrow).transform;
 			}
 
 			arrow.gameObject.SetActive(true);

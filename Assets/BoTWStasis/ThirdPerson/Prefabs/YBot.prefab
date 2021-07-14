@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &932515736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092010147403617030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.26, y: 0.08, z: 0.8}
+  m_Center: {x: 0, y: 0, z: -0.2}
+--- !u!114 &932515735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092010147403617030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501e35254f0558b4b99ae2fbfdd7d73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionForce: 6
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  hitPoint: {x: 0, y: 0, z: 0}
+  hitParticle: {fileID: 0}
+  stasisHitParticle: {fileID: 0}
 --- !u!1 &7963435244734520449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1777,7 @@ GameObject:
   - component: {fileID: 7963435244741947165}
   - component: {fileID: 7963435244734618232}
   - component: {fileID: 7963435244734618239}
+  - component: {fileID: 7963435245202665398}
   m_Layer: 0
   m_Name: YBot
   m_TagString: Untagged
@@ -1834,6 +1867,32 @@ MonoBehaviour:
   VerticalAnimTime: 0.2
   StartAnimTime: 0.3
   StopAnimTime: 0.15
+--- !u!114 &7963435245202665398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963435244734520663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb78e8b97aa05c341b8861b85ab5f6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  anim: {fileID: 0}
+  stasisAim: 0
+  thirdPersonCamera: {fileID: 0}
+  zoomDuration: 0.3
+  zoomFOV: 30
+  zoomCameraOffset: {x: 0.8, y: 1.5, z: 0}
+  target: {fileID: 0}
+  highlightedColor: {r: 0.24705882, g: 1, b: 0, a: 1}
+  normalColor: {r: 1, g: 0.6901961, b: 0, a: 1}
+  finalColor: {r: 1, g: 0, b: 0.043137256, a: 1}
+  arrow: {fileID: 7245756712511800523, guid: 8cb9ec06359787243b365bb51006fef0, type: 3}
 --- !u!1 &7963435244734520665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 943173cfe74ee4a458a00ddf3f8d00fe, type: 3}
+--- !u!1 &6092010147403617030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 943173cfe74ee4a458a00ddf3f8d00fe, type: 3}
+  m_PrefabInstance: {fileID: 2858316702735534607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7120317640123851029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 943173cfe74ee4a458a00ddf3f8d00fe, type: 3}
