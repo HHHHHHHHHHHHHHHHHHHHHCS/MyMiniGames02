@@ -75,6 +75,7 @@ namespace BoTWStasis.Scripts
 				DOTween.KillAll();
 				transform.GetChild(0).gameObject.SetActive(false);
 				renderer.material.SetFloat(StasisAmount_ID, 0);
+				Destroy(arrow.gameObject);
 
 				var particles = endParticleGroup.GetComponentsInChildren<ParticleSystem>();
 				foreach (var particle in particles)
@@ -89,7 +90,7 @@ namespace BoTWStasis.Scripts
 					return;
 				}
 
-				direction = transform.position = hitPoint;
+				direction = transform.position - hitPoint;
 				rb.AddForceAtPosition(direction * accumulatedForce, hitPoint, ForceMode.Impulse);
 				accumulatedForce = 0;
 
@@ -109,10 +110,9 @@ namespace BoTWStasis.Scripts
 
 			if (arrow == null)
 			{
-				arrow = Instantiate(StasisCharacter.instance.arrow).transform;
+				arrow = Instantiate(StasisCharacter.instance.arrow, transform).transform;
 			}
 
-			arrow.gameObject.SetActive(true);
 			float scale = Mathf.Min(arrow.localScale.z + 0.3f, 1.8f);
 			arrow.DOScaleZ(scale, 0.15f).SetEase(Ease.OutBack);
 

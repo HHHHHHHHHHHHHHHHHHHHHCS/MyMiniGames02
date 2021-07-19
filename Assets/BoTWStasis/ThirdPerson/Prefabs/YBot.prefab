@@ -30,8 +30,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   hitPoint: {x: 0, y: 0, z: 0}
-  hitParticle: {fileID: 0}
-  stasisHitParticle: {fileID: 0}
+  hitParticle: {fileID: 2722994197265216967, guid: 4547cd028bb2a2e49beb10b9f3e1eb69, type: 3}
+  stasisHitParticle: {fileID: 3039579878879685780, guid: 93490cde9fd1bbe4abe0a2070cdac244, type: 3}
 --- !u!1 &7963435244734520449
 GameObject:
   m_ObjectHideFlags: 0
