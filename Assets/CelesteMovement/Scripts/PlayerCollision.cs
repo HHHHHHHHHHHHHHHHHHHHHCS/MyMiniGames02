@@ -11,9 +11,9 @@ namespace CelesteMovement.Scripts
 		public Vector2 bottomOffset, rightOffset, leftOffset;
 
 		public bool OnGround { get; private set; }
-		public bool OnWall { get; private set; }
 		public bool OnRightWall { get; private set; }
 		public bool OnLeftWall { get; private set; }
+		public bool OnWall => OnLeftWall || OnRightWall;
 		public int WallSide { get; private set; }
 
 		public PlayerCollision(bool onGround)
@@ -28,8 +28,6 @@ namespace CelesteMovement.Scripts
 
 			OnRightWall = Physics2D.OverlapCircle(pos + rightOffset, collisionRadius, groundLayer);
 			OnLeftWall = Physics2D.OverlapCircle(pos + leftOffset, collisionRadius, groundLayer);
-
-			OnWall = OnRightWall || OnLeftWall;
 
 			WallSide = OnRightWall ? -1 : 1;
 		}

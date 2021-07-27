@@ -14,7 +14,7 @@ namespace CelesteMovement.Scripts
 
 			public Droplet()
 			{
-				time = 1000;
+				time = 10;
 				IsEnd = true;
 			}
 
@@ -33,9 +33,10 @@ namespace CelesteMovement.Scripts
 				}
 
 				time += Time.deltaTime * 2;
-				if (time > 1000)
+				if (time > 10)
 				{
 					IsEnd = true;
+					return false;
 				}
 
 				return true;
@@ -62,6 +63,8 @@ namespace CelesteMovement.Scripts
 			new Keyframe(0.99f, 0.50f, 0, 0)
 		);
 
+		public static RippleEffect instance;
+
 		[Range(0.01f, 1.0f)] public float refractionStrength = 0.5f;
 
 		public Color reflectionColor = Color.gray;
@@ -78,9 +81,16 @@ namespace CelesteMovement.Scripts
 		private Texture2D gradTexture;
 		private Material material;
 		private int dropCount;
+		private static readonly int Drop1_ID = Shader.PropertyToID("_Drop1");
+		private static readonly int Drop2_ID = Shader.PropertyToID("_Drop2");
+		private static readonly int Drop3_ID = Shader.PropertyToID("_Drop3");
+		private static readonly int Reflection_ID = Shader.PropertyToID("_Reflection");
+		private static readonly int Params1_ID = Shader.PropertyToID("_Params1");
+		private static readonly int Params2_ID = Shader.PropertyToID("_Params2");
 
 		private void Awake()
 		{
+			instance = this;
 			droplets = new Droplet[3];
 			for (int i = 0; i < droplets.Length; i++)
 			{
@@ -115,6 +125,7 @@ namespace CelesteMovement.Scripts
 
 		private void OnDestroy()
 		{
+			instance = null;
 			Destroy(material);
 			Destroy(gradTexture);
 		}
@@ -138,13 +149,13 @@ namespace CelesteMovement.Scripts
 		{
 			var aspect = Camera.main.aspect;
 
-			material.SetVector("_Drop1", droplets[0].MakeShaderParameter(aspect));
-			material.SetVector("_Drop2", droplets[1].MakeShaderParameter(aspect));
-			material.SetVector("_Drop3", droplets[2].MakeShaderParameter(aspect));
+			material.SetVector(Drop1_ID, droplets[0].MakeShaderParameter(aspect));
+			material.SetVector(Drop2_ID, droplets[1].MakeShaderParameter(aspect));
+			material.SetVector(Drop3_ID, droplets[2].MakeShaderParameter(aspect));
 
-			material.SetColor("_Reflection", reflectionColor);
-			material.SetVector("_Params1", new Vector4(aspect, 1, 1 / waveSpeed, 0));
-			material.SetVector("_Params2", new Vector4(1, 1 / aspect, refractionStrength, reflectionStrength));
+			material.SetColor(Reflection_ID, reflectionColor);
+			material.SetVector(Params1_ID, new Vector4(aspect, 1, 1 / waveSpeed, 0));
+			material.SetVector(Params2_ID, new Vector4(1, 1 / aspect, refractionStrength, reflectionStrength));
 		}
 		
 		public void Emit(Vector2 pos)

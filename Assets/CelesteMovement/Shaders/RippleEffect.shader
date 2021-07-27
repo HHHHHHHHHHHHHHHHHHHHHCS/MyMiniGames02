@@ -15,7 +15,7 @@ Shader "My/CelesteMovement/RippleEffect"
 			Name "Ripple Effect"
 
 			HLSLPROGRAM
-			#pragma vertexx vert
+			#pragma vertex vert
 			#pragma fragment frag
 
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
@@ -36,6 +36,7 @@ Shader "My/CelesteMovement/RippleEffect"
 
 			TEXTURE2D(_GradTex);
 
+			SAMPLER(sampler_Point_Clamp);
 			SAMPLER(sampler_Linear_Clamp);
 
 			half4 _Reflection;
@@ -54,7 +55,7 @@ Shader "My/CelesteMovement/RippleEffect"
 			}
 
 
-			float allwave(float2 position)
+			float AllWave(float2 position)
 			{
 				return
 					Wave(position, _Drop1.xy, _Drop1.z) +
@@ -73,6 +74,18 @@ Shader "My/CelesteMovement/RippleEffect"
 
 			half4 frag(v2f IN):SV_Target
 			{
+				const float2 dx = float2(0.01f, 0);
+				const float2 dy = float2(0, 0.01f);
+
+				float2 p = IN.uv * _Params1.xy;
+
+				float w = AllWave(p);
+				float2 dw = float2(AllWave(p + dx) - w, AllWave(p + dy) - w);
+				float2 duv = dw * _Params2.xy * 0.2f * _Params2.z;
+				half4 c = SAMPLE_TEXTURE2D(_MainTex, sampler_Point_Clamp, IN.uv + duv);
+				float fr = pow(length(dw) * 3 * _Params2.w, 3);
+
+				return lerp(c, _Reflection, fr);
 			}
 			ENDHLSL
 		}

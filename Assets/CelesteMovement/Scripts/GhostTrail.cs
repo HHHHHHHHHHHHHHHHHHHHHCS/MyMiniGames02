@@ -29,8 +29,8 @@ namespace CelesteMovement.Scripts
                 {
                     child.position = move.transform.position;
                     var spr = child.GetComponent<SpriteRenderer>();
-                    // spr.flipX = anim.sr.flipX;
-                    // spr.sprite = anim.sr.sprite;
+                    spr.flipX = anim.sr.flipX;
+                    spr.sprite = anim.sr.sprite;
                     spr.material.color = trailColor;
                     FadeSprite(spr);
                 });
