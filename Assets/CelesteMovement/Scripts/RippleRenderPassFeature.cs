@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -41,11 +42,18 @@ public class RippleRenderPassFeature : ScriptableRendererFeature
 		{
 			rippleMaterial = CoreUtils.CreateEngineMaterial(rippleShader);
 		}
+		
+		//todo:
 
 		scriptablePass = new RippleRenderPass
 		{
 			renderPassEvent = RenderPassEvent.BeforeRenderingPrepasses
 		};
+	}
+
+	private void OnDestroy()
+	{
+		CoreUtils.Destroy(rippleMaterial);
 	}
 
 	// Here you can inject one or multiple render passes in the renderer.

@@ -15,15 +15,15 @@ namespace CelesteMovement.Scripts
 			rigi = GetComponent<Rigidbody2D>();
 		}
 
-		private void FixedUpdate()
+		private void Update()
 		{
 			if (rigi.velocity.y < 0)
 			{
-				rigi.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.fixedDeltaTime;
+				rigi.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
 			}
 			else if (rigi.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Escape))
 			{
-				rigi.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+				rigi.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
 			}
 		}
 	}
