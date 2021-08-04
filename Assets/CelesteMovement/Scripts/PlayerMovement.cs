@@ -68,6 +68,9 @@ namespace CelesteMovement.Scripts
 				{
 					anim.Flip(side * -1);
 				}
+
+				wallGrab = true;
+				wallSlide = false;
 			}
 
 			if (Input.GetKeyUp(KeyCode.LeftShift) || !coll.OnWall || !canMove)
@@ -85,10 +88,10 @@ namespace CelesteMovement.Scripts
 			if (wallGrab && !isDashing)
 			{
 				rigi.gravityScale = 0;
-				if (x > 0.2f || x < -0.2f)
-				{
-					rigi.velocity = new Vector2(rigi.velocity.x, 0);
-				}
+				// if (x > 0.2f || x < -0.2f)
+				// {
+				// 	rigi.velocity = new Vector2(rigi.velocity.x, 0);
+				// }
 
 				float speedModifier = y > 0 ? 0.5f : 1;
 
@@ -195,8 +198,8 @@ namespace CelesteMovement.Scripts
 		private IEnumerator DashWait()
 		{
 			ghostTrail.ShowGhost();
-			// StartCoroutine(GroundDash());
-			DOVirtual.Float(14, 0, 0.8f, RigibodyDrag);
+			StartCoroutine(GroundDash());
+			DOVirtual.Float(14, 0, 0.8f, RigidbodyDrag);
 
 			dashParticle.Play();
 			rigi.gravityScale = 0;
@@ -212,6 +215,12 @@ namespace CelesteMovement.Scripts
 			betJump.enabled = true;
 			wallJumped = false;
 			isDashing = false;
+		}
+
+
+		private void RigidbodyDrag(float x)
+		{
+			rigi.drag = x;
 		}
 
 		private IEnumerator GroundDash()
@@ -245,9 +254,57 @@ namespace CelesteMovement.Scripts
 			wallJumped = true;
 		}
 
+		private void Walk(Vector2 dir)
+		{
+			if (!canMove)
+			{
+				return;
+			}
+
+			if (wallGrab)
+			{
+				return;
+			}
+
+			if (!wallJumped)
+			{
+				rigi.velocity = new Vector2(dir.x * speed, rigi.velocity.y);
+			}
+			else
+			{
+				rigi.velocity = Vector2.Lerp(rigi.velocity, new Vector2(dir.x * speed, rigi.velocity.y),
+					wallJumpLerp * Time.deltaTime);
+			}
+		}
+
+		private void WallSlide()
+		{
+			if (coll.WallSide != side)
+			{
+				anim.Flip(side * -1);
+			}
+
+			if (!canMove)
+			{
+				return;
+			}
+
+			bool pushingWall = (rigi.velocity.x > 0 && coll.OnRightWall) || (rigi.velocity.x < 0 && coll.OnLeftWall);
+
+			float push = pushingWall ? 0 : rigi.velocity.x;
+
+			rigi.velocity = new Vector2(push, -slideSpeed);
+		}
+
 		private void Jump(Vector2 dir, bool wall)
 		{
-			//todo:
+			slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
+			ParticleSystem particle = wall ? wallJumpParticle : jumpParticle;
+
+			rigi.velocity = new Vector2(rigi.velocity.x, 0);
+			rigi.velocity += dir * jumpForce;
+
+			particle.Play();
 		}
 
 		private IEnumerator DisableMovement(float time)
@@ -255,6 +312,32 @@ namespace CelesteMovement.Scripts
 			canMove = false;
 			yield return new WaitForSeconds(time);
 			canMove = true;
+		}
+
+		private void WallParticle(float vertical)
+		{
+			var main = slideParticle.main;
+
+			if (wallSlide || (wallGrab && vertical < 0))
+			{
+				if (!slideParticle.isPlaying)
+				{
+					slideParticle.Play();
+				}
+
+				slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
+				main.startColor = Color.white;
+			}
+			else
+			{
+				main.startColor = Color.clear;
+				slideParticle.Stop();
+			}
+		}
+
+		private int ParticleSide()
+		{
+			return coll.OnRightWall ? 1 : -1;
 		}
 	}
 }
