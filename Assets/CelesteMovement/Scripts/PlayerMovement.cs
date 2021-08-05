@@ -161,7 +161,7 @@ namespace CelesteMovement.Scripts
 				side = 1;
 				anim.Flip(side);
 			}
-			else
+			if (x < 0)			
 			{
 				side = -1;
 				anim.Flip(side);

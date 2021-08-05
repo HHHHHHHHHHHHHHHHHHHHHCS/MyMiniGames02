@@ -65,7 +65,7 @@ namespace CelesteMovement.Scripts
 				}
 			}
 
-			sr.flipX = side == 1;
+			sr.flipX = (side != 1);
 		}
 	}
 }

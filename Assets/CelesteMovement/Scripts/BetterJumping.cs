@@ -21,7 +21,7 @@ namespace CelesteMovement.Scripts
 			{
 				rigi.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
 			}
-			else if (rigi.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Escape))
+			else if (rigi.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
 			{
 				rigi.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
 			}
