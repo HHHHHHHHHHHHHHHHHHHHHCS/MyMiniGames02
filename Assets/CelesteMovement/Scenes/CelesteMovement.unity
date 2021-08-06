@@ -293,36 +293,36 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 8.978675
-      outSlope: 8.978675
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.111375004
-      value: 1
-      inSlope: 4.4893374
-      outSlope: 4.4893374
+      inSlope: 13.333333
+      outSlope: 13.333333
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.391875
+      time: 0.075
       value: 1
+      inSlope: -0.01062723
+      outSlope: -0.01062723
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15
+      value: 0
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
@@ -331,8 +331,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   refractionStrength: 0.5
   reflectionColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  reflectionStrength: 0.7
-  waveSpeed: 1.25
+  reflectionStrength: 0.397
+  waveSpeed: 1.3
   shader: {fileID: 4800000, guid: 77928bf4430da9848893bd120f77e689, type: 3}
 --- !u!1 &168135164
 GameObject:

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace CelesteMovement.Scripts
@@ -48,6 +49,12 @@ namespace CelesteMovement.Scripts
 			}
 		}
 
+		private static readonly int Drop1_ID = Shader.PropertyToID("_Drop1");
+		private static readonly int Drop2_ID = Shader.PropertyToID("_Drop2");
+		private static readonly int Drop3_ID = Shader.PropertyToID("_Drop3");
+		private static readonly int Reflection_ID = Shader.PropertyToID("_Reflection");
+		private static readonly int Params1_ID = Shader.PropertyToID("_Params1");
+		private static readonly int Params2_ID = Shader.PropertyToID("_Params2");
 
 		public AnimationCurve waveform = new AnimationCurve(
 			new Keyframe(0.00f, 0.50f, 0, 0),
@@ -81,16 +88,12 @@ namespace CelesteMovement.Scripts
 		private Texture2D gradTexture;
 		private Material material;
 		private int dropCount;
-		private static readonly int Drop1_ID = Shader.PropertyToID("_Drop1");
-		private static readonly int Drop2_ID = Shader.PropertyToID("_Drop2");
-		private static readonly int Drop3_ID = Shader.PropertyToID("_Drop3");
-		private static readonly int Reflection_ID = Shader.PropertyToID("_Reflection");
-		private static readonly int Params1_ID = Shader.PropertyToID("_Params1");
-		private static readonly int Params2_ID = Shader.PropertyToID("_Params2");
+
+		public Material RippleMat => material;
+		public bool HaveEffect => droplets.Any(x => !x.IsEnd);
 
 		private void Awake()
 		{
-			instance = this;
 			droplets = new Droplet[3];
 			for (int i = 0; i < droplets.Length; i++)
 			{
@@ -116,11 +119,20 @@ namespace CelesteMovement.Scripts
 			gradTexture.SetPixels(cols);
 			gradTexture.Apply();
 
-			material = new Material(shader);
-			material.hideFlags = HideFlags.DontSave;
+			material = new Material(shader) {hideFlags = HideFlags.DontSave};
 			material.SetTexture("_GradTex", gradTexture);
 
 			UpdateShaderParameters();
+		}
+
+		private void OnEnable()
+		{
+			instance = this;
+		}
+
+		private void OnDisable()
+		{
+			instance = null;
 		}
 
 		private void OnDestroy()
@@ -157,7 +169,7 @@ namespace CelesteMovement.Scripts
 			material.SetVector(Params1_ID, new Vector4(aspect, 1, 1 / waveSpeed, 0));
 			material.SetVector(Params2_ID, new Vector4(1, 1 / aspect, refractionStrength, reflectionStrength));
 		}
-		
+
 		public void Emit(Vector2 pos)
 		{
 			droplets[dropCount++ % droplets.Length].Reset(pos);

@@ -132,9 +132,10 @@ namespace RoyaleBattle
 						cameraData.GetGPUProjectionMatrix(), false);
 				}
 
-				context.ExecuteCommandBuffer(cmd);
-				CommandBufferPool.Release(cmd);
 			}
+			
+			context.ExecuteCommandBuffer(cmd);
+			CommandBufferPool.Release(cmd);
 		}
 	}
 }

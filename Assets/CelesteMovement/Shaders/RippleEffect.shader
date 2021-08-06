@@ -31,8 +31,8 @@ Shader "My/CelesteMovement/RippleEffect"
 				float2 uv : TEXCOORD0;
 			};
 
-			TEXTURE2D(_MainTex);
-			float2 _MainTex_TexelSize;
+			TEXTURE2D(_SrcTex);
+			float2 _SrcTex_TexelSize;
 
 			TEXTURE2D(_GradTex);
 
@@ -82,10 +82,50 @@ Shader "My/CelesteMovement/RippleEffect"
 				float w = AllWave(p);
 				float2 dw = float2(AllWave(p + dx) - w, AllWave(p + dy) - w);
 				float2 duv = dw * _Params2.xy * 0.2f * _Params2.z;
-				half4 c = SAMPLE_TEXTURE2D(_MainTex, sampler_Point_Clamp, IN.uv + duv);
+				half4 c = SAMPLE_TEXTURE2D(_SrcTex, sampler_Point_Clamp, IN.uv + duv);
 				float fr = pow(length(dw) * 3 * _Params2.w, 3);
 
 				return lerp(c, _Reflection, fr);
+			}
+			ENDHLSL
+		}
+
+
+		Pass
+		{
+			Name "Blit"
+
+			HLSLPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+			struct a2v
+			{
+				uint vertexID :SV_VertexID;
+			};
+
+			struct v2f
+			{
+				float4 vertex : SV_POSITION;
+				float2 uv : TEXCOORD0;
+			};
+
+			TEXTURE2D(_SrcTex);
+			SAMPLER(sampler_Point_Clamp);
+
+			v2f vert(a2v IN)
+			{
+				v2f o;
+				o.vertex = GetFullScreenTriangleVertexPosition(IN.vertexID);
+				o.uv = GetFullScreenTriangleTexCoord(IN.vertexID);
+				return o;
+			}
+
+			half4 frag(v2f IN):SV_Target
+			{
+				return SAMPLE_TEXTURE2D(_SrcTex, sampler_Point_Clamp, IN.uv);
 			}
 			ENDHLSL
 		}
