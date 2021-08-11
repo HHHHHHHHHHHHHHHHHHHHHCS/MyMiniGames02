@@ -18,7 +18,7 @@ namespace KingdomHeartsShotLock.Scripts
 		}
 
 
-		private void SetCollider(bool state)
+		public void SetCollider(bool state)
 		{
 			collider.enabled = state;
 		}

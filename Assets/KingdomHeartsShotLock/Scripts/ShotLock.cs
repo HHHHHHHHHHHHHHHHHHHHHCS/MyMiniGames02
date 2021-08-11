@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cinemachine;
 using DG.Tweening;
+using KingdomHeartsShotLock.Scripts.UI;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
@@ -12,6 +13,8 @@ namespace KingdomHeartsShotLock.Scripts
 {
 	public class ShotLock : MonoBehaviour
 	{
+		private static readonly int PosY_ID = Animator.StringToHash("PosY");
+		
 		public PlayableDirector director;
 		public bool cinematic;
 
@@ -37,14 +40,11 @@ namespace KingdomHeartsShotLock.Scripts
 
 		private KingdomHeartsShotLockMovementInput input;
 
-		//todo:
-		// private InterfaceAnimator ui;
-		// private Volume volume;
+		private InterfaceAnimator ui;
 
 		private float time;
 		private int index;
 		private int limit = 25;
-		private static readonly int PosY_ID = Animator.StringToHash("PosY");
 
 		private void Start()
 		{
@@ -83,7 +83,11 @@ namespace KingdomHeartsShotLock.Scripts
 					cinematic = true;
 					transform.position += Vector3.up * 3;
 
-					//TODO:LockFollowUI
+					LockFollowUI[] locks = FindObjectsOfType<LockFollowUI>();
+					foreach (LockFollowUI l in locks)
+					{
+						Destroy(l.gameObject);
+					}
 				}
 
 				Aim(false);
@@ -103,7 +107,7 @@ namespace KingdomHeartsShotLock.Scripts
 					{
 						if (index < oldTargets.Count)
 						{
-							//TODO:UI
+							ui.LockTarget(oldTargets[index]);
 							finalTargets.Add(oldTargets[index]);
 						}
 
@@ -131,8 +135,7 @@ namespace KingdomHeartsShotLock.Scripts
 				Vector3 cam = Camera.main.transform.eulerAngles;
 				GameObject projectile = GameObject.Instantiate(projectilePrefab, weaponTip.transform.position,
 					Quaternion.Euler(cam.x, cam.y, z));
-				//todo:ProjectileScript
-				projectile.GetComponent<ProjectileScript>()
+				projectile.GetComponent<ProjectileScript>().target = finalTargets[i];
 			}
 		}
 
@@ -150,13 +153,53 @@ namespace KingdomHeartsShotLock.Scripts
 
 			detection.SetCollider(state);
 			aiming = state;
-			float foov = state ? zoomFov : originFOV;
-			
+			float fov = state ? zoomFov : originFOV;
+			Vector3 offset = state ? zoomCameraOffset : originalLCameraOffset;
+			float stasisEffect = state ? 0.4f : 0f;
+
+			CinemachineComposer composer = thirdPersonCamera.GetRig(1).GetCinemachineComponent<CinemachineComposer>();
+			DOVirtual.Float(thirdPersonCamera.m_Lens.FieldOfView, fov, zoomDuration, SetFieldOfView);
+			DOVirtual.Float(composer.m_TrackedObjectOffset.x, offset.x, zoomDuration, SetCameraOffsetX);
+			DOVirtual.Float(composer.m_TrackedObjectOffset.y, offset.y, zoomDuration, SetCameraOffsetY);
 		}
 
-		public void TargetState(Transform otherTransform, bool b)
+		public void TargetState(Transform target, bool state)
 		{
-			throw new System.NotImplementedException();
+			if (!state && detection.targets.Contains(target))
+			{
+				detection.targets.Remove(target);
+			}
+
+			if (state && !detection.targets.Contains(target))
+			{
+				detection.targets.Add(target);
+			}
+		}
+
+		private void SetFieldOfView(float x)
+		{
+			thirdPersonCamera.m_Lens.FieldOfView = x;
+		}
+
+		private void SetCameraOffsetX(float x)
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				thirdPersonCamera.GetRig(1).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.x = x;
+			}
+		}
+
+		private void SetCameraOffsetY(float y)
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				thirdPersonCamera.GetRig(i).GetCinemachineComponent<CinemachineComposer>().m_TrackedObjectOffset.y = y;
+			}
+		}
+
+		private void SetVignette(float x)
+		{
+			VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value = x;
 		}
 	}
 }
