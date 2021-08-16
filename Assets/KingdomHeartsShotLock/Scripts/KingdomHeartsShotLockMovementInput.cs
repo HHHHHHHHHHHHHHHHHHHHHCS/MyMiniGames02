@@ -38,6 +38,8 @@ namespace KingdomHeartsShotLock.Scripts
 			anim = GetComponent<Animator>();
 			controller = GetComponent<CharacterController>();
 			floorY = transform.position.y;
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 
 		private void Update()

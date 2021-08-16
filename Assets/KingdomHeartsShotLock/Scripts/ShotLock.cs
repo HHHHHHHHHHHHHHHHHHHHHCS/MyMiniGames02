@@ -49,7 +49,7 @@ namespace KingdomHeartsShotLock.Scripts
 		private void Start()
 		{
 			Cursor.visible = false;
-			// ui = GetComponent<InterfaceAnimator>();
+			ui = GetComponent<InterfaceAnimator>();
 			anim = GetComponent<Animator>();
 			input = GetComponent<KingdomHeartsShotLockMovementInput>();
 			originFOV = thirdPersonCamera.m_Lens.FieldOfView;
@@ -141,7 +141,7 @@ namespace KingdomHeartsShotLock.Scripts
 
 		public void Aim(bool state)
 		{
-			//todo:ui
+			ui.ShowAim(state);
 
 			if (!state && !cinematic)
 			{
