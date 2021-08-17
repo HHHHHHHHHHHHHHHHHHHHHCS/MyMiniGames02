@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Security.Cryptography;
 using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;

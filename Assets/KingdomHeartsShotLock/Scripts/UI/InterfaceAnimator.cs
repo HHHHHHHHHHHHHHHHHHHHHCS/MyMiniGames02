@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using DG.Tweening;
-using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +12,9 @@ namespace KingdomHeartsShotLock.Scripts.UI
 		public Image ringSlider;
 		public GameObject lockPrefab;
 
+		[HideInInspector]
+		public List<LockFollowUI> lockList = new List<LockFollowUI>();
+		
 		private void Start()
 		{
 			aim.alpha = 0;
@@ -36,16 +39,19 @@ namespace KingdomHeartsShotLock.Scripts.UI
 		{
 			Vector3 targetScreenPos = Camera.main.WorldToScreenPoint(target.position);
 
-			var locks = FindObjectsOfType<LockFollowUI>();
-
-			foreach (var item in locks)
+			foreach (var item in lockList)
 			{
-				item.Animate();
-				return;
+				if (item.target == target)
+				{
+					item.Animate();
+					return;	
+				}
 			}
 
 			GameObject lockIcon = Instantiate(lockPrefab, targetScreenPos, Quaternion.identity, canvas.transform);
-			lockIcon.GetComponent<LockFollowUI>().target = target;
+			var lockFollow = lockIcon.GetComponent<LockFollowUI>();
+			lockFollow.target = target;
+			lockList.Add(lockFollow);
 		}
 	}
 }

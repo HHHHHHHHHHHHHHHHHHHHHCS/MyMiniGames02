@@ -14,7 +14,7 @@ namespace KingdomHeartsShotLock.Scripts
 	public class ShotLock : MonoBehaviour
 	{
 		private static readonly int PosY_ID = Animator.StringToHash("PosY");
-		
+
 		public PlayableDirector director;
 		public bool cinematic;
 
@@ -49,6 +49,8 @@ namespace KingdomHeartsShotLock.Scripts
 		private void Start()
 		{
 			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+			
 			ui = GetComponent<InterfaceAnimator>();
 			anim = GetComponent<Animator>();
 			input = GetComponent<KingdomHeartsShotLockMovementInput>();
@@ -64,14 +66,15 @@ namespace KingdomHeartsShotLock.Scripts
 				SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 			}
 
-			if (Input.GetMouseButtonDown(1))
+			if (!aiming && Input.GetMouseButtonDown(1))
 			{
 				var intensity = VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value;
 				DOVirtual.Float(intensity, 0.8f, 0.2f, SetVignette);
 				Aim(true);
 			}
 
-			if (Input.GetMouseButtonUp(1))
+			//就算时间到了也不会自动发射
+			if (aiming && Input.GetMouseButtonUp(1))
 			{
 				var intensity = VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value;
 				DOVirtual.Float(intensity, 0.0f, 0.2f, SetVignette);
@@ -83,11 +86,12 @@ namespace KingdomHeartsShotLock.Scripts
 					cinematic = true;
 					transform.position += Vector3.up * 3;
 
-					LockFollowUI[] locks = FindObjectsOfType<LockFollowUI>();
-					foreach (LockFollowUI l in locks)
+					foreach (LockFollowUI l in ui.lockList)
 					{
 						Destroy(l.gameObject);
 					}
+
+					ui.lockList.Clear();
 				}
 
 				Aim(false);
@@ -96,12 +100,12 @@ namespace KingdomHeartsShotLock.Scripts
 
 			if (aiming)
 			{
+				//一帧一帧数慢慢加进来
 				if (time >= 5)
 				{
 					time = 0;
 
-					List<Transform> oldTargets = new List<Transform>();
-					oldTargets = detection.targets;
+					List<Transform> oldTargets = detection.targets;
 
 					if (oldTargets.Count > 0 && finalTargets.Count < limit)
 					{
@@ -163,18 +167,6 @@ namespace KingdomHeartsShotLock.Scripts
 			DOVirtual.Float(composer.m_TrackedObjectOffset.y, offset.y, zoomDuration, SetCameraOffsetY);
 		}
 
-		public void TargetState(Transform target, bool state)
-		{
-			if (!state && detection.targets.Contains(target))
-			{
-				detection.targets.Remove(target);
-			}
-
-			if (state && !detection.targets.Contains(target))
-			{
-				detection.targets.Add(target);
-			}
-		}
 
 		private void SetFieldOfView(float x)
 		{

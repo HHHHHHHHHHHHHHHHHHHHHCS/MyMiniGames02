@@ -6,17 +6,14 @@ namespace KingdomHeartsShotLock.Scripts
 {
 	public class TargetDetection : MonoBehaviour
 	{
-		public ShotLock shotLock;
-
+		[Space, Header("Targets")] public List<Transform> targets = new List<Transform>();
+		
 		private Collider collider;
 
-		[Space, Header("Targets")] public List<Transform> targets = new List<Transform>();
-
-		private void Start()
+		private void Awake()
 		{
 			collider = GetComponent<Collider>();
 		}
-
 
 		public void SetCollider(bool state)
 		{
@@ -27,18 +24,24 @@ namespace KingdomHeartsShotLock.Scripts
 		{
 			if (other.CompareTag("Enemy"))
 			{
-				shotLock.TargetState(other.transform, true);
+				var target = other.transform;
+				if (!targets.Contains(target))
+				{
+					targets.Add(target);
+				}
 			}
 		}
-
 
 		private void OnTriggerExit(Collider other)
 		{
 			if (other.CompareTag("Enemy"))
 			{
+				var target = other.transform;
+				if (targets.Contains(target))
+				{
+					targets.Remove(target);
+				}
 			}
-
-			shotLock.TargetState(other.transform, false);
 		}
 	}
 }
