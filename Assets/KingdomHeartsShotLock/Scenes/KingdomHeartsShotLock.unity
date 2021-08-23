@@ -798,10 +798,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 5.3
+  m_Radius: 1.5
   m_Height: 84.7
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 42.01}
+  m_Center: {x: 0, y: 0, z: 47.82}
 --- !u!114 &731200601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3073,6 +3073,10 @@ PrefabInstance:
       propertyPath: ringSlider
       value: 
       objectReference: {fileID: 1887102259}
+    - target: {fileID: 486956442, guid: 676d6183d1262bf4d975e0886a8bc237, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 19461028}
     - target: {fileID: 486956442, guid: 676d6183d1262bf4d975e0886a8bc237, type: 3}
       propertyPath: zoomFov
       value: 13

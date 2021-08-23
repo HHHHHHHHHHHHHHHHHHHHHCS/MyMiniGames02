@@ -4,29 +4,31 @@ using UnityEngine;
 
 namespace KingdomHeartsShotLock.Scripts
 {
-    public class ShotLockTimeline : MonoBehaviour
-    {
-        [SerializeField]
-        private ShotLock shotLock;
-        [SerializeField]
-        private KingdomHeartsShotLockMovementInput movementInput;
+	public class ShotLockTimeline : MonoBehaviour
+	{
+		[SerializeField] private ShotLock shotLock;
+		[SerializeField] private KingdomHeartsShotLockMovementInput movementInput;
 
-        private float playerY;
-        
-        private void OnEnable()
-        {
-            shotLock.ActivateShotLock();
-            movementInput.enabled = false;
-            playerY = shotLock.transform.position.y;
-        }
+		private float playerY;
 
-        private void OnDisable()
-        {
-            shotLock.cinematic = false;
-            shotLock.Aim(false);
+		private void Awake()
+		{
+		}
 
-            movementInput.transform.DOMoveY(playerY, 0.5f).SetEase(Ease.InSine)
-                .OnComplete(() => movementInput.enabled = true);
-        }
-    }
+		private void OnEnable()
+		{
+			movementInput.enabled = false;
+			playerY = movementInput.FloorY;
+			shotLock.ActivateShotLock();
+		}
+
+		private void OnDisable()
+		{
+			shotLock.cinematic = false;
+			shotLock.Aim(false);
+
+			movementInput.transform.DOMoveY(playerY, 0.5f).SetEase(Ease.InSine)
+				.OnComplete(() => { movementInput.enabled = true; });
+		}
+	}
 }

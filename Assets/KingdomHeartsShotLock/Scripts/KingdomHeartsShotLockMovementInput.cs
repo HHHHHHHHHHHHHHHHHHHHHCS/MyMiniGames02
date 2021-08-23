@@ -32,6 +32,8 @@ namespace KingdomHeartsShotLock.Scripts
 		private Vector3 moveVector;
 		private float floorY;
 
+		public float FloorY => floorY;
+
 		private void Start()
 		{
 			cam = Camera.main;

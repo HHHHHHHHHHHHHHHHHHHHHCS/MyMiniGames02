@@ -17,6 +17,7 @@ namespace KingdomHeartsShotLock.Scripts
 
 		public PlayableDirector director;
 		public bool cinematic;
+		public Volume volume;
 
 		[Header("Targets")] public TargetDetection detection;
 		public List<Transform> finalTargets = new List<Transform>();
@@ -46,11 +47,13 @@ namespace KingdomHeartsShotLock.Scripts
 		private int index;
 		private int limit = 25;
 
+		private Vignette vignette;
+
 		private void Start()
 		{
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
-			
+			volume.profile.TryGet(out vignette);
 			ui = GetComponent<InterfaceAnimator>();
 			anim = GetComponent<Animator>();
 			input = GetComponent<KingdomHeartsShotLockMovementInput>();
@@ -68,7 +71,7 @@ namespace KingdomHeartsShotLock.Scripts
 
 			if (!aiming && Input.GetMouseButtonDown(1))
 			{
-				var intensity = VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value;
+				var intensity = vignette.intensity.value;
 				DOVirtual.Float(intensity, 0.8f, 0.2f, SetVignette);
 				Aim(true);
 			}
@@ -76,7 +79,7 @@ namespace KingdomHeartsShotLock.Scripts
 			//就算时间到了也不会自动发射
 			if (aiming && Input.GetMouseButtonUp(1))
 			{
-				var intensity = VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value;
+				var intensity = vignette.intensity.value;
 				DOVirtual.Float(intensity, 0.0f, 0.2f, SetVignette);
 				if (finalTargets.Count > 0)
 				{
@@ -191,7 +194,7 @@ namespace KingdomHeartsShotLock.Scripts
 
 		private void SetVignette(float x)
 		{
-			VolumeManager.instance.stack.GetComponent<Vignette>().intensity.value = x;
+			vignette.intensity.value = x;
 		}
 	}
 }
