@@ -1,16 +1,18 @@
 using System;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace MarioKartDrift.Scripts
 {
+	//其实应该假如Animator 可以摆动一下
 	public class KartController : MonoBehaviour
 	{
 		public Volume volume;
-		private VolumeProfile volumeProfile;
 
 		public Transform kartModel;
 		public Transform kartNormal;
@@ -42,9 +44,14 @@ namespace MarioKartDrift.Scripts
 		public Transform flashParticles;
 		public Color[] turboColors;
 
+		private ChromaticAberration chromaticAberration;
+
+		private ParticleSystem tube001PS, tube002PS;
+		private CinemachineImpulseSource cameraImpulseSource;
+
 		private void Start()
 		{
-			volumeProfile = volume.profile;
+			volume.profile.TryGet(out chromaticAberration);
 
 			for (int i = 0; i < wheelParticles.GetChild(0).childCount; i++)
 			{
@@ -60,6 +67,11 @@ namespace MarioKartDrift.Scripts
 			{
 				secondaryParticles.Add(p);
 			}
+
+			tube001PS = kartModel.Find("Tube001").GetComponentInChildren<ParticleSystem>();
+			tube002PS = kartModel.Find("Tube002").GetComponentInChildren<ParticleSystem>();
+
+			cameraImpulseSource = GameObject.Find("CM vcam1").GetComponent<CinemachineImpulseSource>();
 		}
 
 		private void Update()
@@ -218,6 +230,110 @@ namespace MarioKartDrift.Scripts
 			//Normal Rotation
 			kartNormal.up = Vector3.Lerp(kartNormal.up, hitNear.normal, Time.deltaTime * 8.0f);
 			kartNormal.Rotate(0, transform.eulerAngles.y, 0);
+		}
+
+		public void Boost()
+		{
+			drifting = false;
+
+			if (driftMode > 0)
+			{
+				DOVirtual.Float(currentSpeed * 3.0f, currentSpeed, 0.3f * driftMode, Speed);
+				DOVirtual.Float(0.0f, 1.0f, 0.5f, ChromaticAmount)
+					.OnComplete(() => DOVirtual.Float(1.0f, 0.0f, 0.5f, ChromaticAmount));
+				tube001PS.Play();
+				tube002PS.Play();
+			}
+
+			driftPower = 0;
+			driftMode = 0;
+			first = false;
+			second = false;
+			third = false;
+
+			foreach (ParticleSystem p in primaryParticles)
+			{
+				var mainModule = p.main;
+				mainModule.startColor = Color.clear;
+				p.Stop();
+			}
+
+			kartModel.parent.DOLocalRotate(Vector3.zero, 0.5f).SetEase(Ease.OutBack);
+		}
+
+		public void Steer(int direction, float amount)
+		{
+			rotate = (steering * direction) * amount;
+		}
+
+		public void ColorDrift()
+		{
+			if (!first)
+			{
+				c = Color.clear;
+			}
+
+			if (driftPower > 50f && driftPower < 100 - 1 && !first)
+			{
+				first = true;
+				c = turboColors[0];
+				driftMode = 1;
+
+				PlayFlashParticle(c);
+			}
+
+			if (driftPower > 100 && driftPower < 150 - 1 && !second)
+			{
+				second = true;
+				c = turboColors[1];
+				driftMode = 2;
+
+				PlayFlashParticle(c);
+			}
+
+			if (driftPower > 150 && !third)
+			{
+				third = true;
+				c = turboColors[2];
+				driftMode = 3;
+
+				PlayFlashParticle(c);
+			}
+
+			foreach (ParticleSystem particle in primaryParticles)
+			{
+				var mainModule = particle.main;
+				mainModule.startColor = c;
+			}
+
+			foreach (ParticleSystem particle in secondaryParticles)
+			{
+				var mainModule = particle.main;
+				mainModule.startColor = c;
+			}
+		}
+
+		private void PlayFlashParticle(Color c)
+		{
+			cameraImpulseSource.GenerateImpulse();
+
+			foreach (ParticleSystem p in secondaryParticles)
+			{
+				var mainModule = p.main;
+				mainModule.startColor = c;
+				p.Play();
+			}
+		}
+
+
+		private void Speed(float x)
+		{
+			currentSpeed = x;
+		}
+
+		private void ChromaticAmount(float x)
+		{
+			chromaticAberration.intensity.value = x;
 		}
 	}
 }
