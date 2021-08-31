@@ -4861,7 +4861,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14521,7 +14521,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -20019,24 +20019,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: {fileID: 0}
-  kartModel: {fileID: 0}
-  kartNormal: {fileID: 0}
-  sphere: {fileID: 0}
+  kartModel: {fileID: 5711478610265111822}
+  kartNormal: {fileID: 8987514250807110437}
+  sphere: {fileID: 8987514249884692150}
   primaryParticles: []
   secondaryParticles: []
   drifting: 0
-  acceleration: 30
-  steering: 80
-  gravity: 10
+  acceleration: 65
+  steering: 15
+  gravity: 25
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  frontWheels: {fileID: 0}
-  backWheels: {fileID: 0}
-  steeringWheel: {fileID: 0}
-  wheelParticles: {fileID: 0}
-  flashParticles: {fileID: 0}
-  turboColors: []
+    m_Bits: 16179
+  frontWheels: {fileID: 8987514251195775131}
+  backWheels: {fileID: 8987514249513569819}
+  steeringWheel: {fileID: 5711478610265111808}
+  wheelParticles: {fileID: 8987514250631693542}
+  flashParticles: {fileID: 1541510350}
+  turboColors:
+  - {r: 0.21176471, g: 0.8980392, b: 1, a: 1}
+  - {r: 1, g: 0.6862745, b: 0.13725491, a: 1}
+  - {r: 0.9529412, g: 0.21176471, b: 1, a: 1}
 --- !u!1 &8987514249397775964
 GameObject:
   m_ObjectHideFlags: 0

@@ -76,11 +76,7 @@ namespace MarioKartDrift.Scripts
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				float time = Time.timeScale == 1 ? 0.2f : 1f;
-				Time.timeScale = time;
-			}
+
 
 			float hor = Input.GetAxis("Horizontal");
 			int horRaw = (int) Input.GetAxisRaw("Horizontal");
@@ -88,8 +84,18 @@ namespace MarioKartDrift.Scripts
 			// int verRaw = (int) Input.GetAxisRaw("Vertical");
 			bool isJumpDown = Input.GetButtonDown("Jump");
 			bool isJumpUp = Input.GetButtonUp("Jump");
-			bool isAcc = Input.GetButton("Fire1");
+			bool isAcc = Input.GetAxis("Vertical") > 0; // Input.GetButton("Fire1");
 
+			if (isJumpDown)
+			{
+				Time.timeScale = 0.2f;
+			}
+			
+			if (isJumpUp)
+			{
+				Time.timeScale = 1f;
+			}
+			
 			//Follow Collider 
 			transform.position = sphere.transform.position - new Vector3(0f, 0.4f, 0f);
 
@@ -106,6 +112,7 @@ namespace MarioKartDrift.Scripts
 				float amount = Mathf.Abs(hor);
 				Steer(dir, amount);
 			}
+
 
 			//Drift
 			if (isJumpDown && !drifting && hor != 0)
@@ -138,7 +145,7 @@ namespace MarioKartDrift.Scripts
 					to2 = 0;
 				}
 
-				float control = math.remap(hor, -1, 1, from2, to2);
+				float control = math.remap(-1, 1, from2, to2, hor);
 
 				if (driftDirection == 1)
 				{
@@ -151,7 +158,7 @@ namespace MarioKartDrift.Scripts
 					to2 = 0.2f;
 				}
 
-				float powerControl = math.remap(hor, -1, 1, from2, to2);
+				float powerControl = math.remap(-1, 1, from2, to2, hor);
 				Steer(driftDirection, control);
 				driftPower += powerControl;
 				ColorDrift();
@@ -162,7 +169,7 @@ namespace MarioKartDrift.Scripts
 				Boost();
 			}
 
-			currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * 0.12f);
+			currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * 12f);
 			speed = 0f;
 			currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f);
 			rotate = 0f;
@@ -189,8 +196,8 @@ namespace MarioKartDrift.Scripts
 					to2 = 0.5f;
 				}
 
-				float control = math.remap(hor, -1, 1, from2, to2);
-				kartModel.parent.localRotation = quaternion.Euler(0,
+				float control = math.remap(-1, 1, from2, to2, hor);
+				kartModel.parent.localRotation = Quaternion.Euler(0,
 					Mathf.LerpAngle(kartModel.parent.localEulerAngles.y, (control * 15) * driftDirection, 0.2f), 0f);
 			}
 
